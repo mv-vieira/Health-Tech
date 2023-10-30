@@ -26,6 +26,11 @@ public class PacienteController {
     // Cadastrar novo Paciente
     @PostMapping("/paciente")
     public ResponseEntity<Object> savePaciente(@RequestBody @Valid PacienteDto pacienteDto) {
+
+        if(pacienteService.existsByCpf(pacienteDto.cpf())){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Já existe um paciente com esse CPF");
+        }
+
         var pacienteModel = new PacienteModel();
         BeanUtils.copyProperties(pacienteDto, pacienteModel);
         pacienteService.savePaciente(pacienteModel);
