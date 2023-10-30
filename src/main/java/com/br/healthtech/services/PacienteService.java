@@ -16,7 +16,7 @@ public class PacienteService {
     @Autowired
     PacienteRepository pacienteRepository;
 
-    // Salvar Paciente
+    // Cadastrar Paciente
     @Transactional
     public void savePaciente(PacienteModel pacienteModel) {
         pacienteRepository.save(pacienteModel);
@@ -34,14 +34,14 @@ public class PacienteService {
     }
 
     // Encontrar Paciente pelo CPF
-    public boolean existsByCpf (String cpf){
+    public boolean existsByCpf(String cpf) {
         return pacienteRepository.existsByCpf(cpf);
     }
 
     // Deletar Paciente
+    @Transactional
     public void delete(PacienteModel pacienteModel) {
         pacienteRepository.delete(pacienteModel);
     }
-
 
 }

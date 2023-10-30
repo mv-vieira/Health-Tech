@@ -27,7 +27,7 @@ public class PacienteController {
     @PostMapping("/paciente")
     public ResponseEntity<Object> savePaciente(@RequestBody @Valid PacienteDto pacienteDto) {
 
-        if(pacienteService.existsByCpf(pacienteDto.cpf())){
+        if (pacienteService.existsByCpf(pacienteDto.cpf())) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Já existe um paciente com esse CPF");
         }
 
@@ -46,13 +46,32 @@ public class PacienteController {
 
     // Listar paciente pelo id
     @GetMapping("/paciente/{id}")
-    public ResponseEntity<Object> getByIdPaciente (@PathVariable (value = "id") Integer id){
+    public ResponseEntity<Object> getByIdPaciente(@PathVariable(value = "id") Integer id) {
 
         Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
 
         return pacienteModelOptional
                 .<ResponseEntity<Object>>map(pacienteModel -> ResponseEntity.status(HttpStatus.OK).body(pacienteModel))
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado."));
+    }
+
+    // Atualizar dados do paciente
+    @PutMapping("/paciente/{id}")
+    public ResponseEntity<Object> updatePaciente(@PathVariable(value = "id") Integer id,
+                                                 @RequestBody @Valid PacienteDto pacienteDto) {
+
+        Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
+
+        if (pacienteModelOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado.");
+        }
+
+        var pacienteModel = new PacienteModel();
+        BeanUtils.copyProperties(pacienteDto, pacienteModel);
+        pacienteModel.setId(pacienteModelOptional.get().getId());
+        pacienteService.savePaciente(pacienteModel);
+        return ResponseEntity.status(HttpStatus.OK).body("Dados do Paciente atualizados com sucesso!");
+
     }
 
 }

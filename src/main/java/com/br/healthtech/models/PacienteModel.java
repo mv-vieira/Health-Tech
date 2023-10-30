@@ -22,7 +22,7 @@ public class PacienteModel {
     @Column (name= "data_nascimento_paciente", nullable = false)
     private LocalDate dataNascimento;
 
-    @Column (name = "cpf_paciente", nullable = false)
+    @Column (name = "cpf_paciente", nullable = false, unique = true)
     private String cpf;
 
 }
