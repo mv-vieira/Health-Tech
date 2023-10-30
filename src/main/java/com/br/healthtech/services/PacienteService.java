@@ -24,7 +24,13 @@ public class PacienteService {
         pacienteRepository.save(pacienteModel);
     }
 
+    // Encontrar todos os Pacientes
+    public Page<PacienteModel> findAll (Pageable page){
+        return pacienteRepository.findAll(page);
+    }
+
     // Encontrar Paciente pelo Id
+    @Transactional
     public Optional<PacienteModel> findById (int id){
        return pacienteRepository.findById(id);
     }
@@ -34,8 +40,5 @@ public class PacienteService {
         pacienteRepository.delete(pacienteModel);
     }
 
-    // Encontrar todos os Pacientes
-    public Page<PacienteModel> findAll (Pageable page){
-        return pacienteRepository.findAll(page);
-    }
+
 }

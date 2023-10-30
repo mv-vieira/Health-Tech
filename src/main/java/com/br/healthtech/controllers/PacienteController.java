@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/health-tech")
@@ -24,18 +24,30 @@ public class PacienteController {
     PacienteService pacienteService;
 
     // Cadastrar novo Paciente
-    @PostMapping
-    public ResponseEntity<Object> savePaciente ( @RequestBody @Valid PacienteDto pacienteDto) {
+    @PostMapping("/paciente")
+    public ResponseEntity<Object> savePaciente(@RequestBody @Valid PacienteDto pacienteDto) {
         var pacienteModel = new PacienteModel();
         BeanUtils.copyProperties(pacienteDto, pacienteModel);
         pacienteService.savePaciente(pacienteModel);
         return ResponseEntity.status(HttpStatus.CREATED).body("Paciente cadastrado com sucesso!");
     }
 
-    @GetMapping
+    // Listar todos os pacientes por páginas
+    @GetMapping("/paciente")
     public ResponseEntity<Page<PacienteModel>> getAllPacientes(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC)
-                                                               Pageable pageable)
-    {
+                                                               Pageable pageable) {
         return ResponseEntity.status(HttpStatus.OK).body(pacienteService.findAll(pageable));
     }
+
+    // Listar paciente pelo id
+    @GetMapping("/paciente/{id}")
+    public ResponseEntity<Object> getByIdPaciente (@PathVariable (value = "id") Integer id){
+
+        Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
+
+        return pacienteModelOptional
+                .<ResponseEntity<Object>>map(pacienteModel -> ResponseEntity.status(HttpStatus.OK).body(pacienteModel))
+                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado."));
+    }
+
 }
