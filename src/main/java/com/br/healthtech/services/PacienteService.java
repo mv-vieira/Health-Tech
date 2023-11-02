@@ -27,7 +27,7 @@ public class PacienteService {
         return pacienteRepository.findAll(page);
     }
 
-    // Encontrar Paciente pelo Id
+    // Encontrar Paciente pelo ID
     @Transactional
     public Optional<PacienteModel> findById(int id) {
         return pacienteRepository.findById(id);
@@ -36,6 +36,12 @@ public class PacienteService {
     // Encontrar Paciente pelo CPF
     public boolean existsByCpf(String cpf) {
         return pacienteRepository.existsByCpf(cpf);
+    }
+
+    @Transactional
+    // Encontrar pelo CPF
+    public Optional<PacienteModel> findByCpf (String cpf){
+        return pacienteRepository.findByCpf(cpf);
     }
 
     // Deletar Paciente

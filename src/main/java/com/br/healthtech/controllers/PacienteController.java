@@ -55,6 +55,15 @@ public class PacienteController {
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado."));
     }
 
+    // Listar paciente pelo CPF
+    @GetMapping("/paciente/")
+    public ResponseEntity<Object> findByCpf(@RequestParam String cpf) {
+
+        Optional<PacienteModel> pacienteModelOptional = pacienteService.findByCpf(cpf);
+        return ResponseEntity.status(HttpStatus.OK).body(pacienteModelOptional);
+
+    }
+
     // Atualizar dados do paciente
     @PutMapping("/paciente/{id}")
     public ResponseEntity<Object> updatePaciente(@PathVariable(value = "id") Integer id,
