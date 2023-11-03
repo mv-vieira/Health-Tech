@@ -25,4 +25,14 @@ public class PacienteModel {
     @Column (name = "cpf_paciente", nullable = false, unique = true)
     private String cpf;
 
+    public PacienteModel(int id, String nome, LocalDate dataNascimento, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.cpf = cpf;
+    }
+
+    public PacienteModel() {
+
+    }
 }

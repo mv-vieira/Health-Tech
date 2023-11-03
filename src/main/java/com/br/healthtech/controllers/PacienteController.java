@@ -60,6 +60,10 @@ public class PacienteController {
     public ResponseEntity<Object> findByCpf(@RequestParam String cpf) {
 
         Optional<PacienteModel> pacienteModelOptional = pacienteService.findByCpf(cpf);
+
+        if(pacienteModelOptional.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Dados do paciente não encontrado.");
+        }
         return ResponseEntity.status(HttpStatus.OK).body(pacienteModelOptional);
 
     }

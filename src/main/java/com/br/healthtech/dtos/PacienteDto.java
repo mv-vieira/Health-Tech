@@ -16,5 +16,12 @@ public record PacienteDto(
         @Size(max = 14)
         String cpf
 ) {
-
+        public PacienteDto(@NotBlank
+                           String nome, LocalDate dataNascimento, @NotBlank
+                           @Size(max = 14)
+                           String cpf) {
+                this.nome = nome;
+                this.dataNascimento = dataNascimento;
+                this.cpf = cpf;
+        }
 }
