@@ -40,8 +40,8 @@ public class PacienteService {
 
     @Transactional
     // Encontrar pelo CPF
-    public Optional<PacienteModel> findByCpf (String cpf){
-        return pacienteRepository.findByCpf(cpf);
+    public Optional<PacienteModel> findByCpf (String cpf)  {
+            return pacienteRepository.findByCpf(cpf);
     }
 
     // Deletar Paciente

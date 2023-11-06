@@ -57,14 +57,17 @@ public class PacienteController {
 
     // Listar paciente pelo CPF
     @GetMapping("/paciente/")
-    public ResponseEntity<Object> findByCpf(@RequestParam String cpf) {
+    public ResponseEntity<Object> findByCpf(@RequestParam String cpf) throws Exception {
 
         Optional<PacienteModel> pacienteModelOptional = pacienteService.findByCpf(cpf);
 
-        if(pacienteModelOptional.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Dados do paciente não encontrado.");
+        if (pacienteModelOptional.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Paciente não foi encontrado com os dados fornecidos");
         }
         return ResponseEntity.status(HttpStatus.OK).body(pacienteModelOptional);
+
+
 
     }
 
