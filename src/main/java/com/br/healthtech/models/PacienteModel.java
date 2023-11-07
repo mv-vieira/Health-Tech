@@ -1,7 +1,10 @@
 package com.br.healthtech.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -10,9 +13,12 @@ import java.time.LocalDate;
 @Table(name = "tb_paciente")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class PacienteModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id_paciente")
     private int id;
 
@@ -25,14 +31,10 @@ public class PacienteModel {
     @Column (name = "cpf_paciente", nullable = false, unique = true)
     private String cpf;
 
-    public PacienteModel(int id, String nome, LocalDate dataNascimento, String cpf) {
-        this.id = id;
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
-    }
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "fk_id_ambulancia")
+    @JsonIgnore
+    private AmbulanciaModel ambulancia;
 
-    public PacienteModel() {
 
-    }
 }
