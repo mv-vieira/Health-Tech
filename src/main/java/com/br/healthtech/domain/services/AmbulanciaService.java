@@ -1,8 +1,8 @@
-package com.br.healthtech.services;
+package com.br.healthtech.domain.services;
 
-import com.br.healthtech.models.AmbulanciaModel;
-import com.br.healthtech.repositories.AmbulanciaRepository;
-import com.br.healthtech.repositories.PacienteRepository;
+import com.br.healthtech.domain.entity.Ambulancia;
+import com.br.healthtech.infra.repository.AmbulanciaRepository;
+import com.br.healthtech.infra.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +21,7 @@ public class AmbulanciaService {
     }
 
     // Find All
-    public Page<AmbulanciaModel> findAll(Pageable page) {
+    public Page<Ambulancia> findAll(Pageable page) {
         return ambulanciaRepository.findAll(page);
     }
 

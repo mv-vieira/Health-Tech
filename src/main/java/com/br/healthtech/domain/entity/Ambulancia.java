@@ -1,13 +1,12 @@
-package com.br.healthtech.models;
+package com.br.healthtech.domain.entity;
 
-import com.br.healthtech.enuns.AmbulanciaType;
+import com.br.healthtech.domain.entity.enuns.AmbulanciaType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,7 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AmbulanciaModel {
+public class Ambulancia {
 
     @Id
     @Column(name = "id_ambulancia")
@@ -30,9 +29,9 @@ public class AmbulanciaModel {
     private String placa_ambulancia;
 
     @OneToMany(mappedBy = "ambulancia")
-    private List<PacienteModel> pacientes;
+    private List<Paciente> pacientes;
 
 
-    public AmbulanciaModel(AmbulanciaModel ambulanciaModel) {
+    public Ambulancia(Ambulancia ambulancia) {
     }
 }

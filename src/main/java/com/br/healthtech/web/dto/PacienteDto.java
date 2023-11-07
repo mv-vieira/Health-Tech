@@ -1,6 +1,5 @@
-package com.br.healthtech.dtos;
+package com.br.healthtech.web.dto;
 
-import com.br.healthtech.models.PacienteModel;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 

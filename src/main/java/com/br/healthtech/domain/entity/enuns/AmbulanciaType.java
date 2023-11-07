@@ -1,4 +1,4 @@
-package com.br.healthtech.enuns;
+package com.br.healthtech.domain.entity.enuns;
 
 public enum AmbulanciaType {
     A,

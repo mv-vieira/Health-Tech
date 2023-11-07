@@ -1,7 +1,7 @@
-package com.br.healthtech.services;
+package com.br.healthtech.domain.services;
 
-import com.br.healthtech.models.PacienteModel;
-import com.br.healthtech.repositories.PacienteRepository;
+import com.br.healthtech.domain.entity.Paciente;
+import com.br.healthtech.infra.repository.PacienteRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,18 +18,18 @@ public class PacienteService {
 
     // Cadastrar Paciente
     @Transactional
-    public void savePaciente(PacienteModel pacienteModel) {
-        pacienteRepository.save(pacienteModel);
+    public void savePaciente(Paciente paciente) {
+        pacienteRepository.save(paciente);
     }
 
     // Encontrar todos os Pacientes
-    public Page<PacienteModel> findAll(Pageable page) {
+    public Page<Paciente> findAll(Pageable page) {
         return pacienteRepository.findAll(page);
     }
 
     // Encontrar Paciente pelo ID
     @Transactional
-    public Optional<PacienteModel> findById(int id) {
+    public Optional<Paciente> findById(int id) {
         return pacienteRepository.findById(id);
     }
 
@@ -40,14 +40,14 @@ public class PacienteService {
 
     @Transactional
     // Encontrar pelo CPF
-    public Optional<PacienteModel> findByCpf (String cpf)  {
+    public Optional<Paciente> findByCpf (String cpf)  {
             return pacienteRepository.findByCpf(cpf);
     }
 
     // Deletar Paciente
     @Transactional
-    public void delete(PacienteModel pacienteModel) {
-        pacienteRepository.delete(pacienteModel);
+    public void delete(Paciente paciente) {
+        pacienteRepository.delete(paciente);
     }
 
 }

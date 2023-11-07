@@ -1,4 +1,4 @@
-package com.br.healthtech.models;
+package com.br.healthtech.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PacienteModel {
+public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class PacienteModel {
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "fk_id_ambulancia")
     @JsonIgnore
-    private AmbulanciaModel ambulancia;
+    private Ambulancia ambulancia;
 
 
 }
