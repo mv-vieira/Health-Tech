@@ -34,6 +34,6 @@ public class AmbulanciaController {
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Ambulancia>> getAmbulanciaById(@PathVariable int id) {
         Optional<Ambulancia> ambulancia = ambulanciaService.findById(id);
-        return ResponseEntity.ok(ambulancia);
+        return ResponseEntity.status(HttpStatus.OK).body(ambulancia);
     }
 }

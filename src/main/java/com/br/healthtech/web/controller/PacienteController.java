@@ -69,7 +69,6 @@ public class PacienteController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(pacienteModelOptional);
 
-
     }
 
     // Atualizar dados do paciente
