@@ -23,10 +23,11 @@ public class Ambulancia {
     private int id;
 
     @Enumerated(EnumType.STRING)
-    private AmbulanciaType tipo_ambulancia;
+    @Column(name = "tipo_ambulancia")
+    private AmbulanciaType tipoAmbulancia;
 
-    @Column(unique = true)
-    private String placa_ambulancia;
+    @Column(name = "placa_ambulancia",unique = true)
+    private String placaAmbulancia;
 
     @OneToMany(mappedBy = "ambulancia")
     private List<Paciente> pacientes;

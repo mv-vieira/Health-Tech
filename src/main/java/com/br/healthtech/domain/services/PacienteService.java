@@ -4,6 +4,7 @@ import com.br.healthtech.domain.entity.Paciente;
 import com.br.healthtech.infra.repository.PacienteRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,16 @@ public class PacienteService {
 
     // Cadastrar Paciente
     @Transactional
-    public void savePaciente(Paciente paciente) {
-        pacienteRepository.save(paciente);
+    public void savePaciente(Paciente paciente)  {
+        try {
+            if (!pacienteRepository.existsByCpf(paciente.getCpf())) {
+                pacienteRepository.save(paciente);
+            }
+
+        } catch (DataIntegrityViolationException e) {
+
+            throw new DataIntegrityViolationException("Paciente não pode ser cadastrado.");
+        }
     }
 
     // Encontrar todos os Pacientes
@@ -40,8 +49,8 @@ public class PacienteService {
 
     @Transactional
     // Encontrar pelo CPF
-    public Optional<Paciente> findByCpf (String cpf)  {
-            return pacienteRepository.findByCpf(cpf);
+    public Optional<Paciente> findByCpf(String cpf) {
+        return pacienteRepository.findByCpf(cpf);
     }
 
     // Deletar Paciente
