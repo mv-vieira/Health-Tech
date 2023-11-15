@@ -9,10 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -23,10 +20,11 @@ public class AmbulanciaController {
     @Autowired
     private AmbulanciaService ambulanciaService;
 
+
     // Listar todas as ambulancias
     @GetMapping
     public ResponseEntity<Page<Ambulancia>> getAllAmbulancias(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC)
-                                                               Pageable pageable) {
+                                                              Pageable pageable) {
         return ResponseEntity.status(HttpStatus.OK).body(ambulanciaService.findAll(pageable));
     }
 
@@ -34,6 +32,13 @@ public class AmbulanciaController {
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Ambulancia>> getAmbulanciaById(@PathVariable int id) {
         Optional<Ambulancia> ambulancia = ambulanciaService.findById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(ambulancia);
+    }
+
+    // Listar ambulancia pela placa
+    @GetMapping("/buscarplaca")
+    public ResponseEntity<Ambulancia> getAmbulanciaByPlaca(@RequestParam String placa) {
+        Ambulancia ambulancia = ambulanciaService.findByPlaca(placa);
         return ResponseEntity.status(HttpStatus.OK).body(ambulancia);
     }
 }

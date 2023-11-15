@@ -3,7 +3,6 @@ package com.br.healthtech.domain.services;
 import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.infra.repository.AmbulanciaRepository;
 import com.br.healthtech.infra.repository.PacienteRepository;
-import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,18 +31,21 @@ public class AmbulanciaService {
 
     // Find by ID
     @Transactional
-    public Optional<Ambulancia> findById(int id){
-       Optional<Ambulancia> ambulanciaOptional = ambulanciaRepository.findById(id);
+    public Optional<Ambulancia> findById(int id) {
+        Optional<Ambulancia> ambulanciaOptional = ambulanciaRepository.findById(id);
 
-       if(ambulanciaOptional.isPresent()){
-           Ambulancia ambulancia = ambulanciaOptional.get();
-           ambulancia.getPacientes().size();
-           return Optional.of(ambulancia);
-       } else {
-           throw new EntityNotFoundException("Ambulância não encontrada");
-       }
+        if (ambulanciaOptional.isPresent()) {
+            Ambulancia ambulancia = ambulanciaOptional.get();
+            ambulancia.getPacientes().size();
+            return Optional.of(ambulancia);
+        } else {
+            throw new EntityNotFoundException("Ambulância não encontrada");
+        }
+    }
 
-
+    // Find by Placa
+    public Ambulancia findByPlaca(String placa) {
+        return ambulanciaRepository.findByPlacaAmbulancia(placa);
     }
 
 }
