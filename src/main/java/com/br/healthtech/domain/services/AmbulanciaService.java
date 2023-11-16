@@ -2,7 +2,6 @@ package com.br.healthtech.domain.services;
 
 import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.infra.repository.AmbulanciaRepository;
-import com.br.healthtech.infra.repository.PacienteRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +14,8 @@ import java.util.Optional;
 @Service
 public class AmbulanciaService {
 
-    private final AmbulanciaRepository ambulanciaRepository;
-    private final PacienteRepository pacienteRepository;
-
     @Autowired
-    public AmbulanciaService(AmbulanciaRepository ambulanciaRepository, PacienteRepository pacienteRepository) {
-        this.ambulanciaRepository = ambulanciaRepository;
-        this.pacienteRepository = pacienteRepository;
-    }
+    AmbulanciaRepository ambulanciaRepository;
 
     // Find All
     public Page<Ambulancia> findAll(Pageable page) {
@@ -44,8 +37,14 @@ public class AmbulanciaService {
     }
 
     // Find by Placa
+    @Transactional
     public Ambulancia findByPlaca(String placa) {
         return ambulanciaRepository.findByPlacaAmbulancia(placa);
+    }
+
+    // Cadastrar ambulância
+    public void saveAmbulancia(Ambulancia ambulancia) {
+        ambulanciaRepository.save(ambulancia);
     }
 
 }

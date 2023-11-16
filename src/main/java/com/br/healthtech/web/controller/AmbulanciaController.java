@@ -2,6 +2,9 @@ package com.br.healthtech.web.controller;
 
 import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.domain.services.AmbulanciaService;
+import com.br.healthtech.web.dto.AmbulanciaDto;
+import jakarta.validation.Valid;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,5 +43,25 @@ public class AmbulanciaController {
     public ResponseEntity<Ambulancia> getAmbulanciaByPlaca(@RequestParam String placa) {
         Ambulancia ambulancia = ambulanciaService.findByPlaca(placa);
         return ResponseEntity.status(HttpStatus.OK).body(ambulancia);
+    }
+
+    // Alterar dados ambulância
+    @PutMapping("/atualizar-ambulancia")
+    public ResponseEntity<Object> updateAmbulancia(@RequestParam String placa,
+                                                   @RequestBody @Valid AmbulanciaDto ambulanciaDto){
+
+        Ambulancia ambulanciaOptional = ambulanciaService.findByPlaca(placa);
+
+        if(ambulanciaOptional != null){
+            var ambulancia = new Ambulancia();
+            BeanUtils.copyProperties(ambulanciaDto,ambulancia);
+            ambulancia.setId(ambulanciaOptional.getId());
+            ambulancia.setPacientes(ambulanciaOptional.getPacientes());
+            ambulanciaService.saveAmbulancia(ambulancia);
+            return ResponseEntity.status(HttpStatus.OK).body(ambulancia);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ambulância não encontrada.");
+
+
     }
 }
