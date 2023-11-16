@@ -1,8 +1,10 @@
 package com.br.healthtech.web.controller;
 
 import com.br.healthtech.domain.entity.Ambulancia;
+import com.br.healthtech.domain.entity.Paciente;
 import com.br.healthtech.domain.services.AmbulanciaService;
 import com.br.healthtech.web.dto.AmbulanciaDto;
+import com.br.healthtech.web.dto.PacienteDto;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,21 @@ public class AmbulanciaController {
     public ResponseEntity<Ambulancia> getAmbulanciaByPlaca(@RequestParam String placa) {
         Ambulancia ambulancia = ambulanciaService.findByPlaca(placa);
         return ResponseEntity.status(HttpStatus.OK).body(ambulancia);
+    }
+
+    // Cadastrar uma nova ambulância
+    @PostMapping("/cadastrar-ambulancia")
+    public ResponseEntity<Object> savePaciente(@RequestBody @Valid AmbulanciaDto ambulanciaDto) {
+
+        Ambulancia verificaPlaca = ambulanciaService.findByPlaca(ambulanciaDto.placaAmbulancia());
+        if (verificaPlaca != null) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Já existe um paciente com esse CPF");
+        }
+
+        var ambulancia = new Ambulancia();
+        BeanUtils.copyProperties(ambulanciaDto, ambulancia);
+        ambulanciaService.saveAmbulancia(ambulancia);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Ambulância cadastrada com sucesso!");
     }
 
     // Alterar dados ambulância
