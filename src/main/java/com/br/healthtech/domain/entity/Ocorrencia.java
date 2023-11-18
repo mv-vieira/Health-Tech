@@ -29,8 +29,8 @@ public class Ocorrencia {
     @Column(name = "endereco_ocorrencia",nullable = false)
     private String endereco;
 
-    @Column(name = "hora_ocorrencia",nullable = false)
-    private LocalDateTime horaOcorrencia;
+    @Column(name = "horario_ocorrencia")
+    private LocalDateTime dataHora;
 
     @Lob
     private String descricao;

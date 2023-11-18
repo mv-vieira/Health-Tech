@@ -2,6 +2,7 @@ package com.br.healthtech.domain.services;
 
 import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.infra.repository.AmbulanciaRepository;
+import com.br.healthtech.infra.repository.OcorrenciaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class AmbulanciaService {
 
     @Autowired
     AmbulanciaRepository ambulanciaRepository;
+
+    @Autowired
+    OcorrenciaRepository ocorrenciaRepository;
 
     // Find All
     public Page<Ambulancia> findAll(Pageable page) {
