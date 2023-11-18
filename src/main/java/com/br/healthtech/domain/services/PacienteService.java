@@ -42,7 +42,7 @@ public class PacienteService {
         return pacienteRepository.findById(id);
     }
 
-    // Encontrar Paciente pelo CPF
+    // Existe Paciente com o CPF
     public boolean existsByCpf(String cpf) {
         return pacienteRepository.existsByCpf(cpf);
     }

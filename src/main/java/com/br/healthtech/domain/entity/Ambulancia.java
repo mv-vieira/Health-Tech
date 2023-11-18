@@ -32,7 +32,6 @@ public class Ambulancia {
     @OneToMany(mappedBy = "ambulancia")
     private List<Paciente> pacientes;
 
-
-    public Ambulancia(Ambulancia ambulancia) {
-    }
+    @OneToMany(mappedBy = "ambulancia")
+    private List<Ocorrencia> ocorrencias;
 }
