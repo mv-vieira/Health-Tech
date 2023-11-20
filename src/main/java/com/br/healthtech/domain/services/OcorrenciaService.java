@@ -17,7 +17,7 @@ import java.util.Optional;
 public class OcorrenciaService {
 
     @Autowired
-    OcorrenciaRepository ocorrenciaRepository;
+    private OcorrenciaRepository ocorrenciaRepository;
     @Autowired
     private NumeroAutomaticoGenerator numeroAutomaticoGenerator;
 

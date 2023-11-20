@@ -43,6 +43,7 @@ public class OcorrenciaController {
         var ocorrencia = new Ocorrencia();
         BeanUtils.copyProperties(ocorrenciaDto,ocorrencia);
         ocorrencia.setId(ocorrenciaOptional.get().getId());
+        ocorrencia.setAmbulancia(ocorrenciaOptional.get().getAmbulancia());
         ocorrenciaService.saveOcorrencia(ocorrencia);
         return ResponseEntity.status(HttpStatus.OK).body(ocorrencia);
     }
