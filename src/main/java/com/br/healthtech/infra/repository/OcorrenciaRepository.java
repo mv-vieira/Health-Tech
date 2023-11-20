@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface OcorrenciaRepository extends JpaRepository<Ocorrencia, Integer> {
 
 
-    Ocorrencia findByProtocolo(Integer protocolo);
+    Ocorrencia findByProtocolo(String protocolo);
 }
