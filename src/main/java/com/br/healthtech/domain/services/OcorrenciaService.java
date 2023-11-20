@@ -33,7 +33,7 @@ public class OcorrenciaService {
 
     // Find by ID
     @Transactional
-    public Optional<Ocorrencia> findById(int id) {
+    public Optional<Ocorrencia> findById(int id) throws Exception {
         Optional<Ocorrencia> ocorrenciaOptional = ocorrenciaRepository.findById(id);
 
         if (ocorrenciaOptional.isPresent()) {
