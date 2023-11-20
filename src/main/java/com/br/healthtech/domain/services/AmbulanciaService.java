@@ -18,8 +18,6 @@ public class AmbulanciaService {
     @Autowired
     AmbulanciaRepository ambulanciaRepository;
 
-    @Autowired
-    OcorrenciaRepository ocorrenciaRepository;
 
     // Find All
     public Page<Ambulancia> findAll(Pageable page) {

@@ -23,7 +23,7 @@ public class Ocorrencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "numero_protocolo", nullable = false)
+    @Column(name = "numero_protocolo", nullable = false, length = 8)
     private Integer protocolo;
 
     @Column(name = "endereco_ocorrencia",nullable = false)
