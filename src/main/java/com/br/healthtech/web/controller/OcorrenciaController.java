@@ -23,10 +23,6 @@ public class OcorrenciaController {
     OcorrenciaService ocorrenciaService;
 
     // Achando Ocorrência pelo Número de Protocolo
-    @Operation(summary = "Buscar recurso pelo nº do protocolo", description = "Obtém uma ocorrência com base no protocolo.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Ocorrência encontrada com sucesso"),
-            @ApiResponse(responseCode = "404", description = "Ocorrência não encontrada")})
     @GetMapping
     public ResponseEntity<Optional<Ocorrencia>> getByProtocolo(@RequestParam String protocolo) throws Exception {
         Optional<Ocorrencia> ocorrencia = ocorrenciaService.findByProtocolo(protocolo);
