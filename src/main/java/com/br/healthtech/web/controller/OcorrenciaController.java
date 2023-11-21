@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/health-tech/ocorrencia")
 public class OcorrenciaController {
 
