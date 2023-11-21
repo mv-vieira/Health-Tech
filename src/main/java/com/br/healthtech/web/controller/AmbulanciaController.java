@@ -74,7 +74,7 @@ public class AmbulanciaController {
             var ambulancia = new Ambulancia();
             BeanUtils.copyProperties(ambulanciaDto,ambulancia);
             ambulancia.setId(ambulanciaOptional.getId());
-            ambulancia.setPacientes(ambulanciaOptional.getPacientes());
+//            ambulancia.setPacientes(ambulanciaOptional.getPacientes());
             ambulanciaService.saveAmbulancia(ambulancia);
             return ResponseEntity.status(HttpStatus.OK).body(ambulancia);
         }

@@ -1,12 +1,14 @@
 package com.br.healthtech.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.w3c.dom.Text;
 
 import java.time.LocalDateTime;
 
@@ -37,6 +39,11 @@ public class Ocorrencia {
 
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "fk_id_ambulancia")
-    @JsonIgnore
+    @JsonIgnoreProperties("ocorrencias")
     private Ambulancia ambulancia;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name= "fk_id_paciente")
+    @JsonIgnoreProperties("ocorrencias")
+    private Paciente paciente;
 }

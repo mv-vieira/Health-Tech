@@ -6,6 +6,8 @@ import com.br.healthtech.infra.repository.OcorrenciaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -39,6 +41,11 @@ public class OcorrenciaService {
         } else {
             throw new EntityNotFoundException("Ocorrência não encontrada");
         }
+    }
+
+    // Find all
+    public Page<Ocorrencia> findAll(Pageable page){
+        return ocorrenciaRepository.findAll(page);
     }
 
     // Criar nova ocorrência

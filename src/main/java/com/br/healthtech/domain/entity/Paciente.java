@@ -1,5 +1,6 @@
 package com.br.healthtech.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -35,6 +36,10 @@ public class Paciente {
     @JoinColumn(name = "fk_id_ambulancia")
     @JsonIgnore
     private Ambulancia ambulancia;
+
+    @OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private Ocorrencia ocorrencia;
 
 
 }

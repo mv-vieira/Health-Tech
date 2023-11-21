@@ -31,7 +31,7 @@ public class AmbulanciaService {
 
         if (ambulanciaOptional.isPresent()) {
             Ambulancia ambulancia = ambulanciaOptional.get();
-            ambulancia.getPacientes().size();
+//            ambulancia.getPacientes().size();
             return Optional.of(ambulancia);
         } else {
             throw new EntityNotFoundException("Ambulância não encontrada");

@@ -1,6 +1,9 @@
 package com.br.healthtech.domain.entity;
 
 import com.br.healthtech.domain.entity.enuns.AmbulanciaType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,9 +32,10 @@ public class Ambulancia {
     @Column(name = "placa_ambulancia",unique = true)
     private String placaAmbulancia;
 
-    @OneToMany(mappedBy = "ambulancia")
-    private List<Paciente> pacientes;
+//    @OneToMany(mappedBy = "ambulancia")
+//    private List<Paciente> pacientes;
 
     @OneToMany(mappedBy = "ambulancia")
+    @JsonManagedReference
     private List<Ocorrencia> ocorrencias;
 }
