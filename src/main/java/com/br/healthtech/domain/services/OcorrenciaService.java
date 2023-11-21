@@ -23,8 +23,8 @@ public class OcorrenciaService {
 
     //Find by Numero Protocolo
     @Transactional
-    public Ocorrencia findByProtocolo(String protocolo) throws Exception{
-        Ocorrencia ocorrencia = ocorrenciaRepository.findByProtocolo(protocolo);
+    public Optional<Ocorrencia> findByProtocolo(String protocolo) throws Exception{
+        Optional<Ocorrencia> ocorrencia = ocorrenciaRepository.findByProtocolo(protocolo);
         if(ocorrencia == null){
             throw new Exception("Ocorrência com protocolo: " + protocolo + " não foi encontrada");
         }
@@ -48,7 +48,6 @@ public class OcorrenciaService {
     public void saveOcorrencia(Ocorrencia ocorrencia){
         String protocolo = numeroAutomaticoGenerator.gerarNumeroAutomatico();
         ocorrencia.setProtocolo(protocolo);
-        ocorrencia.setDataHora(LocalDateTime.now());
         ocorrenciaRepository.save(ocorrencia);
     }
 }
