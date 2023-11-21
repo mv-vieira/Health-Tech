@@ -1,16 +1,13 @@
 package com.br.healthtech.domain.services;
 
-import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.domain.entity.Ocorrencia;
-import com.br.healthtech.domain.services.utils.NumeroAutomaticoGenerator;
+import com.br.healthtech.domain.services.utils.ProtocoloGenerator;
 import com.br.healthtech.infra.repository.OcorrenciaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -19,7 +16,7 @@ public class OcorrenciaService {
     @Autowired
     private OcorrenciaRepository ocorrenciaRepository;
     @Autowired
-    private NumeroAutomaticoGenerator numeroAutomaticoGenerator;
+    private ProtocoloGenerator protocoloGenerator;
 
     //Find by Numero Protocolo
     @Transactional
@@ -46,7 +43,7 @@ public class OcorrenciaService {
 
     // Criar nova ocorrência
     public void saveOcorrencia(Ocorrencia ocorrencia){
-        String protocolo = numeroAutomaticoGenerator.gerarNumeroAutomatico();
+        String protocolo = protocoloGenerator.gerarProtocolo();
         ocorrencia.setProtocolo(protocolo);
         ocorrenciaRepository.save(ocorrencia);
     }

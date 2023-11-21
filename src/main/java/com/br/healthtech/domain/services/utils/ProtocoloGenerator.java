@@ -4,9 +4,9 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class NumeroAutomaticoGenerator {
+public class ProtocoloGenerator {
 
-    public String gerarNumeroAutomatico() {
+    public String gerarProtocolo() {
         int anoAtual = LocalDate.now().getYear();
         long numeroAleatorio = gerarNumeroAleatorio();
         return formatarNumero(anoAtual, numeroAleatorio);
