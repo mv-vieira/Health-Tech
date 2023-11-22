@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_hospitais")
 @Getter
@@ -30,4 +32,8 @@ public class Hospital {
     private UtiType disponibilidade;
 
     private String especialidade;
+
+    @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+    private List<Ocorrencia> ocorrencias;
+
 }

@@ -46,4 +46,9 @@ public class Ocorrencia {
     @JoinColumn(name= "fk_id_paciente")
     @JsonIgnoreProperties("ocorrencias")
     private Paciente paciente;
+
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "fk_id_hospital")
+    @JsonIgnoreProperties("ocorrencias")
+    private Hospital hospital;
 }
