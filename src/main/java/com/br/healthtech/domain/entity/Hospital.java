@@ -20,19 +20,23 @@ public class Hospital {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id_hospital")
+    @Column (name = "id_hospital", nullable = false)
     private Integer id;
 
-    @Column(name = "nome_hospital")
+    @Column(name = "nome_hospital", nullable = false)
     private String nomeHospital;
 
     private String cnpj;
 
-    @Column(name = "vaga_uti")
+    @Column(name = "vaga_uti", nullable = false)
     @Enumerated(EnumType.STRING)
     private UtiType disponibilidade;
 
+    @Column(nullable = false)
     private String especialidade;
+
+    @Column(nullable = false)
+    private String endereco;
 
     @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
     @JsonManagedReference

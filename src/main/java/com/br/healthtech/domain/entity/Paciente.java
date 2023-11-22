@@ -41,5 +41,4 @@ public class Paciente {
     @JsonBackReference
     private Ocorrencia ocorrencia;
 
-
 }
