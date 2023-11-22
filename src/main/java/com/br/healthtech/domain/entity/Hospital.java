@@ -38,6 +38,9 @@ public class Hospital {
     @Column(nullable = false)
     private String endereco;
 
+    @Column(nullable = false)
+    private String municipio;
+
     @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Ocorrencia> ocorrencias;

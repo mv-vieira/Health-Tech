@@ -13,8 +13,7 @@ public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 
     Optional<Hospital> findByNomeHospital(String nome);
 
-    @Query("SELECT h FROM Hospital h WHERE LOWER(h.endereco) LIKE %:nomeDigitado%")
-    List<Hospital> findByEnderecoContainingNomeDigitado(@Param("nomeDigitado") String nomeDigitado);
+    List<Hospital> findByMunicipio(String municipio);
 
     Optional<Hospital> findByDisponibilidade(UtiType disponibilidade);
 }
