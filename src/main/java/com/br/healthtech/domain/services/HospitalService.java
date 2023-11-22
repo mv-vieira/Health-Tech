@@ -1,6 +1,7 @@
 package com.br.healthtech.domain.services;
 
 import com.br.healthtech.domain.entity.Hospital;
+import com.br.healthtech.domain.entity.enuns.UtiType;
 import com.br.healthtech.infra.repository.HospitalRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
@@ -34,6 +35,16 @@ public class HospitalService {
 
         if (hospitalList.isEmpty()){
             throw new Exception("Não foi encontrado nenhum hospital no município: " + municipio);
+        }
+        return hospitalList;
+    }
+
+    // Find by Disponibilidade e Municipio
+    public List<Hospital> findByDisponibilidadeAndMunicipio(UtiType disponibilidade, String municipio) throws Exception{
+        List<Hospital> hospitalList = hospitalRepository.findByDisponibilidadeAndMunicipio(disponibilidade, municipio);
+
+        if (hospitalList.isEmpty()){
+            throw new Exception("UTI Indisponível ou Hospital não encontrado no município de: " + municipio);
         }
         return hospitalList;
     }

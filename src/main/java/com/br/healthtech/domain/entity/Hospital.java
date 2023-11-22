@@ -1,6 +1,8 @@
 package com.br.healthtech.domain.entity;
 
 import com.br.healthtech.domain.entity.enuns.UtiType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -43,6 +45,7 @@ public class Hospital {
 
     @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JsonIgnoreProperties("hospital")
     private List<Ocorrencia> ocorrencias;
 
 }
