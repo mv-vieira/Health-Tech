@@ -35,7 +35,7 @@ public class Ambulancia {
 //    @OneToMany(mappedBy = "ambulancia")
 //    private List<Paciente> pacientes;
 
-    @OneToMany(mappedBy = "ambulancia")
+    @OneToMany(mappedBy = "ambulancia", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Ocorrencia> ocorrencias;
 }
