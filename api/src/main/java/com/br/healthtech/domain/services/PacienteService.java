@@ -1,6 +1,8 @@
 package com.br.healthtech.domain.services;
 
+import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.domain.entity.Paciente;
+import com.br.healthtech.infra.repository.AmbulanciaRepository;
 import com.br.healthtech.infra.repository.PacienteRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +19,22 @@ public class PacienteService {
     @Autowired
     PacienteRepository pacienteRepository;
 
+    @Autowired
+    AmbulanciaService ambulanciaService;
+
     // Cadastrar Paciente
     @Transactional
-    public void savePaciente(Paciente paciente)  {
+    public void savePaciente(Paciente paciente, Integer idAmbulancia)  {
         try {
             if (!pacienteRepository.existsByCpf(paciente.getCpf())) {
-                pacienteRepository.save(paciente);
+                Optional<Ambulancia> ambulanciaOptional = ambulanciaService.findById(idAmbulancia);
+                if (ambulanciaOptional.isPresent()) {
+                    Ambulancia ambulancia = ambulanciaOptional.get();
+                    paciente.setAmbulancia(ambulancia);
+                    pacienteRepository.save(paciente);
+                } else {
+                    throw new RuntimeException("Ambulância não encontrada.");
+                }
             }
 
         } catch (DataIntegrityViolationException e) {

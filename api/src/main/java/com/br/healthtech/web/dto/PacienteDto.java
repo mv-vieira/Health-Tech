@@ -14,6 +14,7 @@ public record PacienteDto(
         @NotBlank
         @Size(max = 14)
         String cpf
+
 ) {
         public PacienteDto(@NotBlank
                            String nome, LocalDate dataNascimento, @NotBlank

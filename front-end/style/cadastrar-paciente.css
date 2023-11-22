@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  overflow-y: hidden;
+  background-image: linear-gradient(to bottom, black, rgb(19, 173, 211));
+}
+
+nav {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+  box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-container h2{
+  margin-left: 1rem;
+  color: rgb(146, 141, 141);
+  cursor: default;
+}
+
+#logo {
+  background-image: url("/images/logo.png");
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: rotacao 20s infinite linear;
+}
+
+
+#opcoes-nav{
+    text-align: center;
+}
+
+#opcoes-nav a {
+  color: rgb(146, 141, 141);
+  font-size: 1.7rem;
+  margin-left: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: 0.3s ease-in;
+  text-align: center;
+}
+
+#opcoes-nav a:hover {
+  color: #ffff;
+}
+
+#opcoes-nav #login {
+  margin-left: 6rem;
+  border-radius: 0.5rem;
+  transition: 0.6s ease-in-out;
+}
+
+#opcoes-nav #login:hover {
+  background-color: rgb(19, 173, 211);
+  color: white;
+}
+
+#ambulancia-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.3rem;
+    margin: 2rem 0 0 2rem;
+    color: rgb(146, 141, 141);
+    border: 1px solid red;
+    width: 15rem;
+    text-align: center;
+}
+
+#form-container{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5rem auto;
+    width: 50%;
+    height: 70%;
+    color: rgb(146, 141, 141);
+}
+#form-container h1{
+    margin-bottom: 1rem;
+}
+
+.input-field{
+    width: 100%;
+    padding: 0.5rem;
+}
+
+form{
+    background-color: linear-gradient(to bottom, black, rgb(19, 173, 211));
+    padding: 20px;
+    border: 1px solid #ffff;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column; /* Organiza os campos verticalmente */
+    align-items: center; /* Centraliza os campos horizontalmente */
+}
+
+label {
+    display: block;
+    color: #ffff;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    background-color: #d3d3d3;
+    transition: border 0.3s ease-out;
+}
+
+
+form button {
+    background-color: #042d58;
+    color: #fff;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
