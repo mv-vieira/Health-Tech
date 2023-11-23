@@ -13,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -59,7 +60,7 @@ public class OcorrenciaService {
 
     // Criar nova ocorrência
     public void saveOcorrencia(Ocorrencia ocorrencia, Integer idAmbulancia, Integer idPaciente, Integer idHospital) throws Exception {
-        try{
+//        try{
             Optional<Ambulancia> ambulanciaOptional = ambulanciaService.findById(idAmbulancia);
             Optional<Paciente> pacienteOptional = pacienteService.findById(idPaciente);
             Optional<Hospital> hospitalOptional = hospitalService.findById(idHospital);
@@ -74,12 +75,13 @@ public class OcorrenciaService {
             ocorrencia.setPaciente(paciente);
             ocorrencia.setHospital(hospital);
             ocorrencia.setProtocolo(protocolo);
+            ocorrencia.setDataHora(LocalDateTime.now());
 
             ocorrenciaRepository.save(ocorrencia);
-
-        } catch(Exception e){
-            throw new Exception("Não foi possível registrar ocorrência" + e.getMessage());
-        }
+//
+//        } catch(Exception e){
+//            throw new Exception("Não foi possível registrar ocorrência: " + e.getMessage());
+//        }
 
     }
 }

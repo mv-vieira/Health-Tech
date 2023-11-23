@@ -2,7 +2,6 @@ package com.br.healthtech.domain.services;
 
 import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.domain.entity.Paciente;
-import com.br.healthtech.infra.repository.AmbulanciaRepository;
 import com.br.healthtech.infra.repository.PacienteRepository;
 import com.br.healthtech.web.dto.dtoPacienteAmbulancia.PacienteAmbulanciaDTO;
 import jakarta.transaction.Transactional;
