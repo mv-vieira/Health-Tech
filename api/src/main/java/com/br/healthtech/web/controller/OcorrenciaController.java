@@ -54,9 +54,11 @@ public class OcorrenciaController {
 
             if (ocorrenciaOptional.isPresent()) {
                 if (ocorrencia.getDataHora() != null) {
+                    ocorrencia.setDescricao(ocorrenciaDto.descricao());
                     ocorrencia.setEndereco(ocorrenciaDto.endereco());
                 } else {
                     ocorrencia.setDataHora(LocalDateTime.now());
+                    ocorrencia.setDescricao(ocorrenciaDto.descricao());
                     ocorrencia.setEndereco(ocorrenciaDto.endereco());
                 }
                 ocorrenciaService.saveOcorrencia(ocorrencia);

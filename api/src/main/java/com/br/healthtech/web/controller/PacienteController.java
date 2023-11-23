@@ -3,6 +3,7 @@ package com.br.healthtech.web.controller;
 import com.br.healthtech.domain.entity.Paciente;
 import com.br.healthtech.domain.services.PacienteService;
 import com.br.healthtech.web.dto.PacienteDto;
+import com.br.healthtech.web.dto.dtoPacienteAmbulancia.PacienteAmbulanciaDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin
@@ -23,6 +26,20 @@ public class PacienteController {
 
     @Autowired
     PacienteService pacienteService;
+
+    @GetMapping("/paciente/{id}")
+    public ResponseEntity<PacienteAmbulanciaDTO> getPacienteAmbulancia(@PathVariable int id) {
+        Optional<Paciente> paciente = pacienteService.findById(id);
+
+        if (paciente != null && paciente.get().getAmbulancia() != null) {
+            PacienteAmbulanciaDTO pacienteAmbulanciaDTO = new PacienteAmbulanciaDTO(paciente.get());
+            return ResponseEntity.ok(pacienteAmbulanciaDTO);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
 
     // Cadastrar novo Paciente
     @PostMapping("/paciente/")
@@ -39,23 +56,38 @@ public class PacienteController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Paciente cadastrado com sucesso!");
     }
 
-    // Listar todos os pacientes por páginas
+//     Listar todos os pacientes por páginas
     @GetMapping("/paciente")
-    public ResponseEntity<Page<Paciente>> getAllPacientes(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC)
+    public ResponseEntity<Page<PacienteAmbulanciaDTO>> getAllPacientes(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC)
                                                           Pageable pageable) {
-        return ResponseEntity.status(HttpStatus.OK).body(pacienteService.findAll(pageable));
+        return ResponseEntity.status(HttpStatus.OK).body(pacienteService.findAllPacientesPage(pageable));
     }
 
-    // Listar paciente pelo id
-    @GetMapping("/paciente/{id}")
-    public ResponseEntity<Object> getByIdPaciente(@PathVariable(value = "id") Integer id) throws Exception {
+//    @GetMapping("/paciente")
+//    public ResponseEntity<List<PacienteAmbulanciaDTO>> getAllPacientes() {
+//        List<Paciente> pacientes = pacienteService.findAll();
+//
+//        if (!pacientes.isEmpty()) {
+//            List<PacienteAmbulanciaDTO> pacienteDTOs = pacientes.stream()
+//                    .map(PacienteAmbulanciaDTO::new)
+//                    .collect(Collectors.toList());
+//
+//            return ResponseEntity.ok(pacienteDTOs);
+//        } else {
+//            return ResponseEntity.noContent().build();
+//        }
+//    }
 
-        Optional<Paciente> pacienteModelOptional = pacienteService.findById(id);
-
-        return pacienteModelOptional
-                .<ResponseEntity<Object>>map(paciente -> ResponseEntity.status(HttpStatus.OK).body(paciente))
-                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado."));
-    }
+//    // Listar paciente pelo id
+//    @GetMapping("/paciente/{id}")
+//    public ResponseEntity<Object> getByIdPaciente(@PathVariable(value = "id") Integer id) throws Exception {
+//
+//        Optional<Paciente> pacienteModelOptional = pacienteService.findById(id);
+//
+//        return pacienteModelOptional
+//                .<ResponseEntity<Object>>map(paciente -> ResponseEntity.status(HttpStatus.OK).body(paciente))
+//                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado."));
+//    }
 
     // Listar paciente pelo CPF
     @GetMapping("/paciente/")

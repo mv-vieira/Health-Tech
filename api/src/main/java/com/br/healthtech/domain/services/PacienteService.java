@@ -4,14 +4,18 @@ import com.br.healthtech.domain.entity.Ambulancia;
 import com.br.healthtech.domain.entity.Paciente;
 import com.br.healthtech.infra.repository.AmbulanciaRepository;
 import com.br.healthtech.infra.repository.PacienteRepository;
+import com.br.healthtech.web.dto.dtoPacienteAmbulancia.PacienteAmbulanciaDTO;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PacienteService {
@@ -44,8 +48,18 @@ public class PacienteService {
     }
 
     // Encontrar todos os Pacientes
-    public Page<Paciente> findAll(Pageable page) {
-        return pacienteRepository.findAll(page);
+    public List<Paciente> findAll() {
+        return pacienteRepository.findAll();
+    }
+
+    public Page<PacienteAmbulanciaDTO> findAllPacientesPage(Pageable pageable){
+        Page<Paciente> pacientesPage = pacienteRepository.findAll(pageable);
+
+        List<PacienteAmbulanciaDTO> pacientesDTOList = pacientesPage.getContent().stream()
+                .map(PacienteAmbulanciaDTO::new)
+                .collect(Collectors.toList());
+
+        return new PageImpl<>(pacientesDTOList, pageable, pacientesPage.getTotalElements());
     }
 
     // Encontrar Paciente pelo ID

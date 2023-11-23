@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastrar Paciente</title>
+    <title>Cadastrar Ocorrência</title>
 
     <link rel="icon" href="images/logo.png" type="image/png" />
 
-    <link rel="stylesheet" href="/style/cadastrar-paciente.css" />
-    <script src="/js/cadastrar-paciente.js"></script>
+    <link rel="stylesheet" href="/style/gerar-ocorrencia.css" />
+    <script src="/js/gerar-ocorrencia.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,32 +37,38 @@
 
     <main>
       <div id="form-container">
-        <h1>Cadastro Paciente</h1>
+        <h1>Gerar Ocorrência</h1>
 
         <form id="cadastroForm">
-          <div class="input-field">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required />
-          </div>
 
           <div class="input-field">
-            <label for="dataNascimento">Data de Nascimento:</label>
-            <input
-              type="date"
-              id="dataNascimento"
-              name="dataNascimento"
-              required
-            />
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required />
           </div>
 
-          <div class="input-field">
-            <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required />
+          <div class="text-field">
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="descricao" cols="45" rows="5"></textarea>
+            <!-- <input type="text" id="cpf" name="cpf" required /> -->
           </div>
 
           <div class="input-field">
             <label for="ambulancia">Ambulância:</label>
-            <select id="ambulancia" name="ambulancia">
+            <select id="ambulancia" name="ambulancia" disabled>
+              <!-- Opções de ambulância aqui -->
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label for="paciente">Paciente:</label>
+            <select id="paciente" name="paciente" disabled>
+              <!-- Opções de ambulância aqui -->
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label for="hospital">Hospital:</label>
+            <select id="hospital" name="hospital">
               <!-- Opções de ambulância aqui -->
             </select>
           </div>

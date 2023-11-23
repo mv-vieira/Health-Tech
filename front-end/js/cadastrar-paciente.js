@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dataNascimentoElement.value = "";
             cpfElement.value = "";
             ambulanciaElement.value = "";
-            window.location.href = "index.html";
+            window.location.href = "gerar-ocorrencia.html";
           }
         })
         .catch((error) => {
