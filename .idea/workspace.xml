@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f87b5933-0967-4a52-9d91-c670a5dab27e" name="Changes" comment="Feature - endpoint para encontrar hospital pelo município" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/entity/Ambulancia.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/entity/Hospital.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/entity/Ocorrencia.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/entity/Paciente.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/entity/enuns/AmbulanciaType.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/entity/enuns/UtiType.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/services/AmbulanciaService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/services/HospitalService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/services/OcorrenciaService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/services/PacienteService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/domain/services/utils/ProtocoloGenerator.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/infra/config/CorsConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/infra/config/LocalDateTimeConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/infra/config/ProtocoloConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/infra/repository/AmbulanciaRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/infra/repository/HospitalRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/infra/repository/OcorrenciaRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/web/controller/AmbulanciaController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/web/controller/HospitalController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/web/controller/OcorrenciaController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/web/controller/PacienteController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/web/dto/AmbulanciaDto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/web/dto/OcorrenciaDto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/br/healthtech/web/dto/PacienteDto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/application.properties" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2XUVAJRMiDjZowzk7OThVpFDLsH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Start - Java 2023.2/Projeto Final START JAVA 2023.2/health-tech/api"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="HealthTechApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.br.healthtech.HealthTechApplication" />
+      <module name="health-tech" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.br.healthtech.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HealthTechApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f87b5933-0967-4a52-9d91-c670a5dab27e" name="Changes" comment="" />
+      <created>1698683503609</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698683503609</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Adicionando funcionalidade no PacienteService - findAll, e criando endpoint de consultar paciente pelo id - PacienteController">
+      <option name="closed" value="true" />
+      <created>1698694077490</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698694077490</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Realizando validação no metódo POST para cpf's duplicados.">
+      <option name="closed" value="true" />
+      <created>1698702953709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698702953709</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Criação do método de atualização de dados do Paciente no controller e service.">
+      <option name="closed" value="true" />
+      <created>1698703907923</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698703907923</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Listar paciente pelo CPF">
+      <option name="closed" value="true" />
+      <created>1698883769133</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698883769133</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Tratamento de erro no findByCpf(Controller)">
+      <option name="closed" value="true" />
+      <created>1699035542237</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699035542237</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Tratamento de erro no findByCpf(Controller) pt 2">
+      <option name="closed" value="true" />
+      <created>1699301647984</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699301647984</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Restruturando arquitetura de pastas do projeto">
+      <option name="closed" value="true" />
+      <created>1699371178828</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699371178828</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Criando endpoint para listar ambulância pelo id">
+      <option name="closed" value="true" />
+      <created>1699458804453</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699458804453</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Alterando ResponseEntity do endpoint /ambulancias/{id}">
+      <option name="closed" value="true" />
+      <created>1699461244031</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699461244032</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Criando endpoint para buscar ambulância por placa '/buscarplaca?placa='">
+      <option name="closed" value="true" />
+      <created>1700068686632</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700068686632</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Feature - Atualizar dados ambulância '/atualizar-ambulancia'">
+      <option name="closed" value="true" />
+      <created>1700138658490</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700138658491</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Feature - Cadastrar Ambulância '/cadastrar-ambulancia'">
+      <option name="closed" value="true" />
+      <created>1700139765823</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700139765823</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Feature - Criação da Entidade 'Ocorrência'">
+      <option name="closed" value="true" />
+      <created>1700316180976</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700316180976</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Feature - Criação da Entidade 'Ocorrência' (2)">
+      <option name="closed" value="true" />
+      <created>1700316242975</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700316242975</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Feature - Adicionando atributo de descricao na entidade 'Ocorrência'">
+      <option name="closed" value="true" />
+      <created>1700316769259</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700316769259</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Feature - Criação do Repository de Ocorrência">
+      <option name="closed" value="true" />
+      <created>1700317985267</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700317985267</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Config - Formatando datas para o padrão 'yyyy-MM-dd HH:mm:ss'">
+      <option name="closed" value="true" />
+      <created>1700325612661</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700325612661</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Feature - Criação e configuração inicial do Service, Controller e Dto de Ocorrência">
+      <option name="closed" value="true" />
+      <created>1700489917372</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700489917372</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Feature - Achando ocorrência pelo Protocolo, Alterar uma ocorrência pelo id, alterando service para cadastrar ocorrência / Config - Gerar número de protocolo automatico.">
+      <option name="closed" value="true" />
+      <created>1700508985645</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1700508985645</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fix - Setando Ambulância vinculada com a ocorrência">
+      <option name="closed" value="true" />
+      <created>1700509592618</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700509592618</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fix - Adicionando exception no Service de Ocorrência">
+      <option name="closed" value="true" />
+      <created>1700510470865</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1700510470865</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Feature - Alterar ocorrência pelo protocolo">
+      <option name="closed" value="true" />
+      <created>1700525510917</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1700525510917</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Refactor - getByProtocolo">
+      <option name="closed" value="true" />
+      <created>1700525648233</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1700525648233</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Feature - Adicionando CrossOrigin">
+      <option name="closed" value="true" />
+      <created>1700590890290</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1700590890291</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Refactor - Alterando nome da classe e método para gerar protocolo">
+      <option name="closed" value="true" />
+      <created>1700591101751</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1700591101751</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Feature / Fix / Refactor - Criação da entidade Hospital e sua disponibilidade. Corrigindo bug de retorno de requisição em todas entidades. E refatorando alguns endpoints">
+      <option name="closed" value="true" />
+      <created>1700600681512</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700600681512</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Feature - Criando relacionamento entre Hospital e Ocorrência">
+      <option name="closed" value="true" />
+      <created>1700612880333</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1700612880333</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refactor - Adicionando annotaion @JsonManagedReference na entidade Hospital, e especificando o relacionamento tipo cascata">
+      <option name="closed" value="true" />
+      <created>1700613416407</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700613416407</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Feature - Criação do Repository e Service da entidade Hospital">
+      <option name="closed" value="true" />
+      <created>1700677369809</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1700677369809</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Feature - Inserção de um novo atributo 'município' na entidade Hospitais, Configurando novas querys e criação de novos métodos no service">
+      <option name="closed" value="true" />
+      <created>1700678197236</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1700678197236</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Feature - endpoint para encontrar hospital pelo município">
+      <option name="closed" value="true" />
+      <created>1700681935975</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1700681935975</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Feature - endpoint para encontrar hospital pelo município">
+      <option name="closed" value="true" />
+      <created>1700681946035</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700681946035</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Restruturando arquitetura de pastas do projeto" />
+    <MESSAGE value="Criando endpoint para listar ambulância pelo id" />
+    <MESSAGE value="Alterando ResponseEntity do endpoint /ambulancias/{id}" />
+    <MESSAGE value="Criando endpoint para buscar ambulância por placa '/buscarplaca?placa='" />
+    <MESSAGE value="Feature - Atualizar dados ambulância '/atualizar-ambulancia'" />
+    <MESSAGE value="Feature - Cadastrar Ambulância '/cadastrar-ambulancia'" />
+    <MESSAGE value="Feature - Criação da Entidade 'Ocorrência'" />
+    <MESSAGE value="Feature - Criação da Entidade 'Ocorrência' (2)" />
+    <MESSAGE value="Feature - Adicionando atributo de descricao na entidade 'Ocorrência'" />
+    <MESSAGE value="Feature - Criação do Repository de Ocorrência" />
+    <MESSAGE value="Config - Formatando datas para o padrão 'yyyy-MM-dd HH:mm:ss'" />
+    <MESSAGE value="Feature - Criação e configuração inicial do Service, Controller e Dto de Ocorrência" />
+    <MESSAGE value="Feature - Achando ocorrência pelo Protocolo, Alterar uma ocorrência pelo id, alterando service para cadastrar ocorrência / Config - Gerar número de protocolo automatico." />
+    <MESSAGE value="Fix - Setando Ambulância vinculada com a ocorrência" />
+    <MESSAGE value="Fix - Adicionando exception no Service de Ocorrência" />
+    <MESSAGE value="Feature - Alterar ocorrência pelo protocolo" />
+    <MESSAGE value="Refactor - getByProtocolo" />
+    <MESSAGE value="Feature - Adicionando CrossOrigin" />
+    <MESSAGE value="Refactor - Alterando nome da classe e método para gerar protocolo" />
+    <MESSAGE value="Feature / Fix / Refactor - Criação da entidade Hospital e sua disponibilidade. Corrigindo bug de retorno de requisição em todas entidades. E refatorando alguns endpoints" />
+    <MESSAGE value="Feature - Criando relacionamento entre Hospital e Ocorrência" />
+    <MESSAGE value="Refactor - Adicionando annotaion @JsonManagedReference na entidade Hospital, e especificando o relacionamento tipo cascata" />
+    <MESSAGE value="Feature - Criação do Repository e Service da entidade Hospital" />
+    <MESSAGE value="Feature - Inserção de um novo atributo 'município' na entidade Hospitais, Configurando novas querys e criação de novos métodos no service" />
+    <MESSAGE value="Feature - endpoint para encontrar hospital pelo município" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature - endpoint para encontrar hospital pelo município" />
+  </component>
+</project>

@@ -3,6 +3,7 @@ package com.br.healthtech.domain.entity;
 import com.br.healthtech.domain.entity.enuns.AmbulanciaType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -37,5 +38,6 @@ public class Ambulancia {
 
     @OneToMany(mappedBy = "ambulancia", cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JsonIgnoreProperties("ambulancia")
     private List<Ocorrencia> ocorrencias;
 }

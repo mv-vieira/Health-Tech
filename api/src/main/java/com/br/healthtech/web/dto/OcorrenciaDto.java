@@ -5,10 +5,9 @@ import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record OcorrenciaDto(@NotBlank @NotNull String endereco, @Lob String descricao) {
+public record OcorrenciaDto(@NotBlank @NotNull String endereco) {
 
-    public OcorrenciaDto(@NotBlank @NotNull String endereco, String descricao) {
+    public OcorrenciaDto(@NotBlank @NotNull String endereco) {
         this.endereco = endereco;
-        this.descricao = descricao;
     }
 }

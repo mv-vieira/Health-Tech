@@ -34,8 +34,6 @@ public class Ocorrencia {
     @Column(name = "horario_ocorrencia")
     private LocalDateTime dataHora;
 
-    @Lob
-    private String descricao;
 
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "fk_id_ambulancia")
