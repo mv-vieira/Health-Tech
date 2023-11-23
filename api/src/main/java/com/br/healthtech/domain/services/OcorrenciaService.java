@@ -1,6 +1,9 @@
 package com.br.healthtech.domain.services;
 
+import com.br.healthtech.domain.entity.Ambulancia;
+import com.br.healthtech.domain.entity.Hospital;
 import com.br.healthtech.domain.entity.Ocorrencia;
+import com.br.healthtech.domain.entity.Paciente;
 import com.br.healthtech.domain.services.utils.ProtocoloGenerator;
 import com.br.healthtech.infra.repository.OcorrenciaRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -17,6 +20,12 @@ public class OcorrenciaService {
 
     @Autowired
     private OcorrenciaRepository ocorrenciaRepository;
+    @Autowired
+    private AmbulanciaService ambulanciaService;
+    @Autowired
+    private PacienteService pacienteService;
+    @Autowired
+    private HospitalService hospitalService;
     @Autowired
     private ProtocoloGenerator protocoloGenerator;
 
@@ -49,9 +58,28 @@ public class OcorrenciaService {
     }
 
     // Criar nova ocorrência
-    public void saveOcorrencia(Ocorrencia ocorrencia){
-        String protocolo = protocoloGenerator.gerarProtocolo();
-        ocorrencia.setProtocolo(protocolo);
-        ocorrenciaRepository.save(ocorrencia);
+    public void saveOcorrencia(Ocorrencia ocorrencia, Integer idAmbulancia, Integer idPaciente, Integer idHospital) throws Exception {
+        try{
+            Optional<Ambulancia> ambulanciaOptional = ambulanciaService.findById(idAmbulancia);
+            Optional<Paciente> pacienteOptional = pacienteService.findById(idPaciente);
+            Optional<Hospital> hospitalOptional = hospitalService.findById(idHospital);
+
+            Ambulancia ambulancia = ambulanciaOptional.get();
+            Paciente paciente = pacienteOptional.get();
+            Hospital hospital = hospitalOptional.get();
+
+            String protocolo = protocoloGenerator.gerarProtocolo();
+
+            ocorrencia.setAmbulancia(ambulancia);
+            ocorrencia.setPaciente(paciente);
+            ocorrencia.setHospital(hospital);
+            ocorrencia.setProtocolo(protocolo);
+
+            ocorrenciaRepository.save(ocorrencia);
+
+        } catch(Exception e){
+            throw new Exception("Não foi possível registrar ocorrência" + e.getMessage());
+        }
+
     }
 }

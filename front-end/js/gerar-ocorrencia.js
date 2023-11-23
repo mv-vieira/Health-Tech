@@ -110,6 +110,70 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Erro:", error));
   });
 
+  // Método Post para envio de formulário no endpoint de pacientes
+document.addEventListener("DOMContentLoaded", function () {
+    document
+      .getElementById("cadastroForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+  
+        const enderecoElement = document.getElementById("endereco");
+        const descricaoElement = document.getElementById("descricao");
+        const ambulanciaElement = document.getElementById("ambulancia");
+        const pacienteElement = document.getElementById("paciente");
+        const hospitalElement = document.getElementById("hospital");
+  
+        const endereco = enderecoElement.value;
+        const descricao = descricaoElement.value;
+        const ambulancia = ambulanciaElement.value;
+        const paciente = pacienteElement.value;
+        const hospital = hospitalElement.value;
+  
+        const UrlApi =
+        `http://localhost:8080/health-tech/ocorrencia/cadastrar-ocorrencia?idAmbulancia=${ambulancia}&idPaciente=${paciente}6&idHospital=${hospital}`
+  
+        const data = {
+        endereco,
+        descricao,
+        };
+  
+        fetch(UrlApi, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then(async (response) => {
+            if (!response.ok) {
+              throw new Error(
+                `Erro na solicitação: ${response.status} - ${response.statusText}`
+              );
+            }
+            const responseBody = await response.text(); // Lê o corpo da resposta como texto
+            try {
+              const result = JSON.parse(responseBody);
+              console.log("Sucesso:", result);
+              // Faça o que for necessário com o JSON retornado, se aplicável
+            } catch (error) {
+              console.log("Sucesso:", responseBody);
+              // Limpar os campos, pois a resposta não é um JSON
+              enderecoElement.value = "";
+              descricaoElement.value = "";
+              ambulanciaElement.value = "";
+              pacienteElement.value = "";
+              hospitalElement.value = "";
+              window.location.href = "index.html";
+            }
+          })
+          .catch((error) => {
+            console.error("Erro na resposta da API:", error.message);
+          });
+      });
+  });
+  
+
   // Formatar data de nascimento
 function formatarDataNascimento(dataNascimento) {
     const options = { day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'UTC' };

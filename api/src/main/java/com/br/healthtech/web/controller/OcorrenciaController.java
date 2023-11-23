@@ -61,7 +61,10 @@ public class OcorrenciaController {
                     ocorrencia.setDescricao(ocorrenciaDto.descricao());
                     ocorrencia.setEndereco(ocorrenciaDto.endereco());
                 }
-                ocorrenciaService.saveOcorrencia(ocorrencia);
+                Integer idAmbulancia = ocorrencia.getAmbulancia().getId();
+                Integer idPaciente = ocorrencia.getPaciente().getId();
+                Integer idHospital = ocorrencia.getHospital().getId();
+                ocorrenciaService.saveOcorrencia(ocorrencia, idAmbulancia, idPaciente, idHospital);
                 return ResponseEntity.status(HttpStatus.OK).body(ocorrencia);
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ocorrência não encontrada com o protocolo: " + protocolo);
@@ -75,11 +78,14 @@ public class OcorrenciaController {
 
     // Criar nova ocorrência
     @PostMapping("/cadastrar-ocorrencia")
-    public ResponseEntity<Object> saveOcorrencia(@RequestBody @Valid OcorrenciaDto ocorrenciaDto) {
+    public ResponseEntity<Object> saveOcorrencia(@RequestBody @Valid OcorrenciaDto ocorrenciaDto,
+                                                 @RequestParam Integer idAmbulancia,
+                                                 @RequestParam Integer idPaciente,
+                                                 @RequestParam Integer idHospital) throws Exception {
 
         var ocorrencia = new Ocorrencia();
         BeanUtils.copyProperties(ocorrenciaDto, ocorrencia);
-        ocorrenciaService.saveOcorrencia(ocorrencia);
+        ocorrenciaService.saveOcorrencia(ocorrencia, idAmbulancia, idPaciente, idHospital);
         return ResponseEntity.status(HttpStatus.CREATED).body("Ocorrência cadastrada com sucesso!");
     }
 
