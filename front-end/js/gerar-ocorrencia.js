@@ -50,11 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
         hospitalSelect.add(defaultOption);
   
         data.content.forEach((hospital) => {
-          const option = document.createElement("option");
-          option.value = hospital.id;
-          option.text =
-          hospital.nomeHospital + " - " + hospital.municipio;
-          hospitalSelect.add(option);
+          if(hospital.disponibilidade == "Disponível"){
+            const option = document.createElement("option");
+            option.value = hospital.id;
+            option.text =
+            hospital.nomeHospital + " - " + hospital.municipio;
+            hospitalSelect.add(option);
+          }
         });
       })
       .catch((error) => console.error("Erro:", error));

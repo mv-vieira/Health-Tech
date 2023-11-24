@@ -67,6 +67,17 @@ a {
   animation: rotacao 20s infinite linear;
 }
 
+@keyframes rotacao {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 #opcoes-nav {
   text-align: center;
 }
@@ -115,17 +126,10 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  filter: blur(8px);
 }
 
-@keyframes rotacao {
-  from {
-    transform: rotate(0deg);
-  }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 #textocentro {
   position: absolute;
@@ -133,4 +137,12 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 1;
+  color: rgb(196, 184, 184);
+  text-shadow: 2px 2px black;
+  border: 1px solid red;
+  justify-content: leftz;
+  display: flex;
+  align-items: left;
+  
 }
