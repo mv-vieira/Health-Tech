@@ -85,6 +85,7 @@ public class OcorrenciaController {
 
         var ocorrencia = new Ocorrencia();
         BeanUtils.copyProperties(ocorrenciaDto, ocorrencia);
+//        ocorrencia.setDataHora(LocalDateTime.now());
         ocorrenciaService.saveOcorrencia(ocorrencia, idAmbulancia, idPaciente, idHospital);
         return ResponseEntity.status(HttpStatus.CREATED).body("Ocorrência cadastrada com sucesso!");
     }

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.getElementById('table-body');
     const tableTitle = document.getElementById('table-title');
-    const ApiUrl = 'http://localhost:8080/health-tech/ambulancias/buscarplaca?placa=KGT-0357'
+    const ApiUrl = 'http://localhost:8080/health-tech/ambulancias/buscarplaca?placa=KJZ-9239' // KGT-0357
 
     // Realiza a requisição à API
     fetch(ApiUrl)
@@ -44,6 +44,6 @@ function formatarDataHora(dataHora) {
 
 // Formatar data de nascimento
 function formatarDataNascimento(dataNascimento) {
-    const options = { day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'UTC' };
+    const options = { day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'America/Sao_Paulo' };
     return new Intl.DateTimeFormat('pt-BR', options).format(new Date(dataNascimento));
 }

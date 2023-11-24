@@ -9,11 +9,14 @@ import com.br.healthtech.infra.repository.OcorrenciaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.Optional;
 
 @Service
@@ -76,6 +79,12 @@ public class OcorrenciaService {
             ocorrencia.setHospital(hospital);
             ocorrencia.setProtocolo(protocolo);
 
+            if(ocorrencia.getDataHora() == null){
+                // Obtém a data e hora atual em UTC
+                ZoneId zoneBrasilia = ZoneId.of("America/Sao_Paulo");
+                LocalDateTime dataHoraAtualBrasilia = LocalDateTime.now(zoneBrasilia);
+                ocorrencia.setDataHora(dataHoraAtualBrasilia);
+            }
             ocorrenciaRepository.save(ocorrencia);
 //
 //        } catch(Exception e){
