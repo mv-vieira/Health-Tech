@@ -7,7 +7,6 @@
   box-sizing: border-box;
   outline: none;
   border: none;
-  text-transform: capitalize;
   transition: all 0.2s ease-out;
   text-decoration: none;
 }
@@ -138,11 +137,13 @@ main {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
-  color: rgb(196, 184, 184);
+  /* color: rgb(196, 184, 184); */
+  color: #ffff;
   text-shadow: 2px 2px black;
-  border: 1px solid red;
-  justify-content: leftz;
+  /* border: 1px solid red; */
+  justify-content: left;
   display: flex;
   align-items: left;
+  font-size: 1.5rem;
   
 }
