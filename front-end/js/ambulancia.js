@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(ApiUrl)
         .then(response => response.json())
         .then(data => {
+            console.log(data)
+            data.ocorrencias.sort((a, b) => new Date(a.dataHora) - new Date(b.dataHora));
+
             // Limpa o corpo da tabela
             tableBody.innerHTML = '';
             tableTitle.innerHTML = `Ocorrências da Ambulância - Placa ${data.placaAmbulancia}`;

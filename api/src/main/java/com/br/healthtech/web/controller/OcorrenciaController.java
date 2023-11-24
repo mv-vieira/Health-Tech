@@ -50,9 +50,9 @@ public class OcorrenciaController {
                                                    @RequestBody @Valid OcorrenciaDto ocorrenciaDto) throws Exception {
         try {
             Optional<Ocorrencia> ocorrenciaOptional = ocorrenciaService.findByProtocolo(protocolo);
-            Ocorrencia ocorrencia = ocorrenciaOptional.get();
 
             if (ocorrenciaOptional.isPresent()) {
+                Ocorrencia ocorrencia = ocorrenciaOptional.get();
                 if (ocorrencia.getDataHora() != null) {
                     ocorrencia.setDescricao(ocorrenciaDto.descricao());
                     ocorrencia.setEndereco(ocorrenciaDto.endereco());

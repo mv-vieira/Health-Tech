@@ -75,7 +75,6 @@ public class OcorrenciaService {
             ocorrencia.setPaciente(paciente);
             ocorrencia.setHospital(hospital);
             ocorrencia.setProtocolo(protocolo);
-            ocorrencia.setDataHora(LocalDateTime.now());
 
             ocorrenciaRepository.save(ocorrencia);
 //
