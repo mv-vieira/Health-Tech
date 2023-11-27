@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="/style/ambulancia.css" />
     <script src="/js/ambulancia.js"></script>
-    
   </head>
   <body>
     <nav>
@@ -23,23 +22,35 @@
     </nav>
 
     <main>
-        <div class="table-container">
-            <h2 id="table-title"></h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Protocolo</th>
-                        <th>Nome do Paciente</th>
-                        <th>Data de Nascimento</th>
-                        <th>Endereço</th>
-                        <th>Data e Hora</th>
-                        <th>Hospital</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body"></tbody>
-            </table>
+      <div class="search-container">
+        <h2 id="table-title"></h2>
+        <div class="search-field">
+          <input
+            id="placaInput"
+            class="search-input"
+            placeholder="Digite a placa da ambulância"
+            onfocus="removePlaceHolder(this)"
+            type="text"
+          />
+          <button id="search-button"type="submit"><span>Procurar</span></button>
         </div>
-        
+      </div>
+
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Protocolo</th>
+              <th>Nome do Paciente</th>
+              <th>Data de Nascimento</th>
+              <th>Endereço</th>
+              <th>Data e Hora</th>
+              <th>Hospital</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
     </main>
   </body>
 </html>
