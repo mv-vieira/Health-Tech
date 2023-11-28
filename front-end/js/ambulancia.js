@@ -26,6 +26,7 @@ function procurarPlaca() {
     })
     .then(data => {
         console.log(data);
+        tableTitle.innerHTML = ''
         tableTitle.innerHTML = `Ocorrências da Ambulância - Placa ${data.placaAmbulancia}`;
 
         // Faz uma cópia do array e ordena

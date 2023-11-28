@@ -98,6 +98,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  /* margin-bottom: 1rem; */
 }
 
 .search-field {
@@ -118,14 +119,13 @@ a {
   border: none;
   width: 25%;
   height: 2.7rem;
-  padding: 0; /* Removido o padding anterior */
   border-radius: 1rem;
   transition: 0.5s ease-out;
 }
 
 .search-field button span {
-  padding: 0.5rem; /* Adicionado o padding para centralizar o texto */
-  box-sizing: border-box; /* Garante que o padding não afete as dimensões totais */
+  padding: 0.5rem; 
+  box-sizing: border-box; 
 }
 
 .search-field button:hover {
@@ -155,6 +155,7 @@ a {
   flex-direction: column;
   max-height: 50rem;
   overflow-y: auto;
+  border: 1px solid #ffff;
 }
 
 main {
