@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  overflow-y: hidden;
+  background-image: linear-gradient(to bottom, black, rgb(19, 173, 211));
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+nav {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+  box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-container h2{
+  margin-left: 1rem;
+  color: rgb(146, 141, 141);
+  cursor: default;
+}
+
+#logo {
+  background-image: url("/images/logo.png");
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: rotacao 20s infinite linear;
+}
+
+
+#opcoes-nav{
+    text-align: center;
+}
+
+#opcoes-nav a {
+  color: rgb(146, 141, 141);
+  font-size: 1.7rem;
+  margin-left: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: 0.3s ease-in;
+  text-align: center;
+}
+
+#opcoes-nav a:hover {
+  color: #ffff;
+}
+
+#opcoes-nav #login {
+  margin-left: 6rem;
+  border-radius: 0.5rem;
+  transition: 0.6s ease-in-out;
+}
+
+#opcoes-nav #login:hover {
+  background-color: rgb(19, 173, 211);
+  color: white;
+}
+
+.container-info {
+    border: 1px solid red;
+    text-align: center;
+    width: 60vw;
+    height: 70vh;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around; /* ou qualquer outro alinhamento que desejar */
+    margin-bottom: 20px; /* Adicione margem inferior conforme necessário */
+}
+
+.info-ocorrencia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 75%;
+    height: 30%;
+    color: #ffff;
+    /* background-color: black; */
+    text-align: center; /* Alinhe o texto ao centro se desejar */
+}
+
+.info-ocorrencia h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px; /* Adicione espaço entre o título e o parágrafo conforme necessário */
+}
+
+.info-ocorrencia p{
+    font-size: 1.2rem;
+}

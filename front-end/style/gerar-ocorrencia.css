@@ -41,13 +41,13 @@ a {
   text-decoration: none;
 }
 
-#logo-container{
+#logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#logo-container h2{
+#logo-container h2 {
   margin-left: 1rem;
   color: rgb(146, 141, 141);
   cursor: default;
@@ -67,9 +67,8 @@ a {
   animation: rotacao 20s infinite linear;
 }
 
-
-#opcoes-nav{
-    text-align: center;
+#opcoes-nav {
+  text-align: center;
 }
 
 #opcoes-nav a {
@@ -97,97 +96,98 @@ a {
   color: white;
 }
 
-#ambulancia-info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0.3rem;
-    margin: 2rem 0 0 2rem;
-    color: rgb(146, 141, 141);
-    border: 1px solid red;
-    width: 15rem;
-    text-align: center;
+#ambulancia-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.3rem;
+  margin: 2rem 0 0 2rem;
+  color: rgb(146, 141, 141);
+  border: 1px solid red;
+  width: 15rem;
+  text-align: center;
 }
 
-#form-container{
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 5rem auto;
-    width: 50%;
-    height: 70%;
-    color: rgb(146, 141, 141);
+#form-container {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5rem auto;
+  width: 50%;
+  height: 70%;
+  color: rgb(146, 141, 141);
 }
-#form-container h1{
-    margin-bottom: 1rem;
-}
-
-.input-field{
-    width: 100%;
-    padding: 0.5rem;
+#form-container h1 {
+  color: #ffff;
+  margin-bottom: 1rem;
 }
 
-.text-field{
-    width: 100%;
-    padding: 0.5rem;
+.input-field {
+  width: 100%;
+  padding: 0.5rem;
 }
 
-.custom-textarea{
-    background-color: red;
+.text-field {
+  width: 100%;
+  padding: 0.5rem;
 }
 
-form{
-    background-color: linear-gradient(to bottom, black, rgb(19, 173, 211));
-    padding: 20px;
-    border: 1px solid #ffff;
-    border-radius: 8px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    width: 400px;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
+.custom-textarea {
+  background-color: red;
 }
 
+form {
+  background-color: linear-gradient(to bottom, black, rgb(19, 173, 211));
+  padding: 20px;
+  border: 1px solid #ffff;
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 400px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 label {
-    display: block;
-    color: #ffff;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+  display: block;
+  color: #ffff;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
-input, select, textarea{
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border-radius: 1rem;
-    background-color: #d3d3d3;
-    transition: border 0.3s ease-out;
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  background-color: #d3d3d3;
+  transition: border 0.3s ease-out;
 }
-
 
 form button {
-    background-color: #042d58;
-    color: #fff;
-    width: 50%;
-    padding: 10px;
-    border: none;
-    border-radius: 1rem;
-    cursor: pointer;
-    margin-top: 1rem;
+  background-color: #042d58;
+  color: #fff;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-main{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
