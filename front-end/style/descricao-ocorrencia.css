@@ -7,7 +7,6 @@
   box-sizing: border-box;
   outline: none;
   border: none;
-  text-transform: capitalize;
   transition: all 0.2s ease-out;
   text-decoration: none;
 }
@@ -21,7 +20,7 @@ html {
 
 body {
   height: 100vh;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   background-image: linear-gradient(to bottom, black, rgb(19, 173, 211));
 }
 
@@ -29,6 +28,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin: 0;
 }
 
@@ -107,34 +107,36 @@ a {
     border: 1px solid red;
     text-align: center;
     width: 60vw;
-    height: 70vh;
-    margin-top: 10rem;
+    height: 100vh;
+    margin-top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    justify-content: space-around; /* ou qualquer outro alinhamento que desejar */
-    margin-bottom: 20px; /* Adicione margem inferior conforme necessário */
+    margin-bottom: 20px;
+}
+
+.container-info h1{
+    margin-bottom: 2rem;
+    color: #ffff;
 }
 
 .info-ocorrencia {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    text-align: center;
     margin-bottom: 1rem;
     width: 75%;
     height: 30%;
     color: #ffff;
-    /* background-color: black; */
-    text-align: center; /* Alinhe o texto ao centro se desejar */
 }
 
 .info-ocorrencia h2 {
     font-size: 1.8rem;
-    margin-bottom: 5px; /* Adicione espaço entre o título e o parágrafo conforme necessário */
+    margin-bottom: 5px;
 }
 
-.info-ocorrencia p{
+.info-ocorrencia p {
     font-size: 1.2rem;
+    margin: 0;
 }

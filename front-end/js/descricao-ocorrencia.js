@@ -15,11 +15,12 @@ async function carregarDados() {
     // Acesse o último item em "content"
     const ocorrencia = data.content[data.content.length - 1];
 
-    const { paciente, hospital, ambulancia, protocolo, dataHora, endereco } =
+    const { paciente, hospital, ambulancia, protocolo, dataHora, descricao, endereco } =
       ocorrencia;
 
     // Crie o HTML com os dados
     const html = `
+            <h1>Detalhes Ocorrência</h1>
             <div class="info-ocorrencia">
                 <h2>Protocolo</h2>
                 <p>${protocolo}</p>
@@ -29,7 +30,7 @@ async function carregarDados() {
                 <p>${endereco}</p>
             </div>
             <div class="info-ocorrencia">
-                <h2>Nome Paciente</h2>
+                <h2>Nome do Paciente</h2>
                 <p>${paciente.nome}</p>
             </div>
             <div class="info-ocorrencia">
@@ -45,6 +46,14 @@ async function carregarDados() {
             <div class="info-ocorrencia">
                 <h2>Hospital Encaminhado</h2>
                 <p>${hospital.nomeHospital}</p>
+            </div>
+            <div class="info-ocorrencia">
+                <h2>Especialidade</h2>
+                <p>${hospital.especialidade}</p>
+            </div>
+            <div class="info-ocorrencia">
+                <h2>Descrição da Ocorrência</h2>
+                <p>${descricao}</p>
             </div>
 
             <button>Home</button>
