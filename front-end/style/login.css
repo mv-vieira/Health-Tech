@@ -89,13 +89,13 @@ main {
 }
 
 #email{
-    background-image: url("images/envelope-fill.svg");
+    background-image: url("../images/envelope-fill.svg");
     background-repeat: no-repeat;
     background-position: center left 10px;
 }
 
 #senha{
-    background-image: url("images/key-fill.svg");
+    background-image: url("../images/key-fill.svg");
     background-repeat: no-repeat;
     background-position: center left 10px;
 }

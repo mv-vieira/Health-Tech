@@ -1,126 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
-
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  transition: all 0.2s ease-out;
-  text-decoration: none;
-}
-
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-padding-top: 7rem;
-  scroll-behavior: smooth;
-}
-
-body {
-  height: 100vh;
-  overflow-y: hidden;
-  background-image: linear-gradient(to bottom, black, rgb(19, 173, 211));
-
-}
-
-nav {
-  margin-top: 1rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  width: 100%;
-  box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.5);
-}
-
-a {
-  text-decoration: none;
-}
-
-#logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#logo-container h2 {
-  margin-left: 1rem;
-  color: rgb(146, 141, 141);
-  cursor: default;
-}
-
-#logo {
-  background-image: url("/images/logo.png");
-  width: 50px;
-  height: 50px;
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: rotacao 20s infinite linear;
-}
-
-@keyframes rotacao {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-#opcoes-nav {
-  text-align: center;
-}
-
-#opcoes-nav a {
-  color: rgb(146, 141, 141);
-  font-size: 1.7rem;
-  margin-left: 1rem;
-  padding: 1rem;
-  text-decoration: none;
-  transition: 0.3s ease-in;
-  text-align: center;
-}
-
-#opcoes-nav a:hover {
-  color: #ffff;
-}
-
-#opcoes-nav #login {
-  margin-left: 54rem;
-  border-radius: 0.5rem;
-  transition: 0.6s ease-in-out;
-}
-
-#opcoes-nav #login:hover {
-  background-color: rgb(19, 173, 211);
-  color: white;
-}
-
-#opcoes-nav #login1 {
-  margin-left: 1rem;
-  border-radius: 0.5rem;
-  transition: 0.6s ease-in-out;
-}
-
-#opcoes-nav #login1:hover {
-  background-color: rgb(19, 173, 211);
-  color: white;
-}
-
 main {
   display: flex;
   margin: 30px 50px;
-  background-image: url("/images/logo.png");
+  background-image: url("../images/logo.png");
   height: 80%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -128,7 +9,9 @@ main {
   filter: blur(8px);
 }
 
-
+#logo {
+  animation: rotacao 20s infinite linear;
+}
 
 #textocentro {
   position: absolute;
@@ -137,13 +20,10 @@ main {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
-  /* color: rgb(196, 184, 184); */
-  color: #ffff;
+  color: rgb(196, 184, 184);
   text-shadow: 2px 2px black;
-  /* border: 1px solid red; */
-  justify-content: left;
+  justify-content: leftz;
   display: flex;
   align-items: left;
-  font-size: 1.5rem;
   
 }
