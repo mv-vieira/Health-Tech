@@ -104,6 +104,7 @@ a {
 }
 
 .container-info {
+    position: relative;
     background-image: url('/images/logo.png');
     background-position: center;
     background-size: contain;
@@ -121,7 +122,23 @@ a {
     flex-direction: column;
     margin-bottom: 2rem;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    
+    background-color: rgba(255, 255, 255, 0.015); /* Branco com 50% de opacidade */
+    backdrop-filter: blur(20px);
+}
+
+.container-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  filter: blur(10px);
+  z-index: -1;
 }
 
 .container-info h1{
@@ -144,7 +161,7 @@ a {
 
 .info-ocorrencia h2 {
     /* color: #84b6f4; */
-    color: #8B4513;
+    color: #e61919;
     font-weight: 500;
     font-size: 1.8rem;
     margin-bottom: 5px;
