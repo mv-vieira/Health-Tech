@@ -45,11 +45,7 @@ async function carregarDados() {
 
             <div class="info-ocorrencia">
                 <h2>Hospital Encaminhado</h2>
-                <p>${hospital.nomeHospital}</p>
-            </div>
-            <div class="info-ocorrencia">
-                <h2>Especialidade</h2>
-                <p>${hospital.especialidade}</p>
+                <p>${hospital.nomeHospital} - ${hospital.municipio}</p>
             </div>
             <div class="info-ocorrencia">
                 <h2>Descrição da Ocorrência</h2>

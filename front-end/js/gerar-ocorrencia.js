@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ambulanciaElement.value = "";
           pacienteElement.value = "";
           hospitalElement.value = "";
-          window.location.href = "index.html";
+          window.location.href = "descricao-ocorrencia.html";
         }
       } catch (error) {
         console.error("Erro na resposta da API:", error.message);
