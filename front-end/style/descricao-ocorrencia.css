@@ -192,3 +192,42 @@ a {
     font-size: 1.3rem;
     margin: 0;
 }
+
+/* Media Queries para dispositivos menores */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  #opcoes-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #opcoes-nav #login {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .container-info {
+    width: 100%;
+  }
+
+  .container-info button {
+    width: 80%;
+  }
+
+  .info-ocorrencia,
+  .info-ocorrencia h2,
+  .info-ocorrencia p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .info-ocorrencia h2{
+    font-size: 2rem;
+  }
+}

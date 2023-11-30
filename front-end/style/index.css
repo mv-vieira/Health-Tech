@@ -134,3 +134,20 @@ main {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  #opcoes-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #opcoes-nav #login,
+  #opcoes-nav #login1 {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}

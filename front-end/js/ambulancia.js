@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('search-button').addEventListener('click', procurarPlaca);
 });
 
+//Função para procurar na API a placa da ambulância e retornar na tabela seus dados.
 function procurarPlaca() {
     let placa = document.getElementById("placaInput").value;
     const tableBody = document.getElementById('table-body');

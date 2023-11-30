@@ -5,11 +5,13 @@ function formatarData(data) {
   return dataObj.toLocaleDateString("pt-BR", options);
 }
 
+//Formatar Data e Hora
 function formatarDataHora(dataHora) {
   const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'America/Sao_Paulo'};
   return new Intl.DateTimeFormat('pt-BR', options).format(new Date(dataHora));
 }
 
+//Traçar a Rota da Ocorrência para o Hospital
 function tracarRota() {
   // Obter os valores dos campos de endereço
   var enderecoOcorrencia = encodeURIComponent(document.getElementById("enderecoOcorrencia").textContent);
@@ -19,10 +21,10 @@ function tracarRota() {
   var url = 'https://www.google.com/maps/dir/?api=1&origin=' + enderecoOcorrencia + '&destination=' + enderecoHospital;
 
   // Redirecionar para o Google Maps
-  window.location.href = url;
+  window.open(url, '_blank');
 }
 
-// Função para buscar os dados da API e atualizar o HTML
+// Função para buscar os dados da ocorrência registrada e gerar a tabela de detalhamento
 async function carregarDados() {
   try {
     const response = await fetch(
