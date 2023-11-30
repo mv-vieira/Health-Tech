@@ -104,7 +104,13 @@ a {
 }
 
 .container-info {
-    border: 1px solid red;
+    background-image: url('/images/logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: fill;
+    border-left: 1px solid #ffff;
+    border-top: 1px solid #ffff;
     text-align: center;
     width: 60vw;
     height: 100vh;
@@ -113,10 +119,13 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    
 }
 
 .container-info h1{
+    margin-top: 1rem;
     margin-bottom: 2rem;
     color: #ffff;
 }
@@ -129,14 +138,20 @@ a {
     width: 75%;
     height: 30%;
     color: #ffff;
+    border-bottom: 1px solid #fff;
 }
 
+
 .info-ocorrencia h2 {
+    /* color: #84b6f4; */
+    color: #8B4513;
+    font-weight: 500;
     font-size: 1.8rem;
     margin-bottom: 5px;
+    /* text-shadow: 2px 5px 7px rgba(0,0,0,0.52); */
 }
 
 .info-ocorrencia p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0;
 }
