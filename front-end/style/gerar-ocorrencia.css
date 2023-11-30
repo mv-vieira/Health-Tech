@@ -7,7 +7,6 @@
   box-sizing: border-box;
   outline: none;
   border: none;
-  text-transform: capitalize;
   transition: all 0.2s ease-out;
   text-decoration: none;
 }
@@ -128,7 +127,9 @@ a {
 .input-field {
   width: 100%;
   padding: 0.5rem;
+  text-transform: capitalize;
 }
+
 
 .text-field {
   width: 100%;

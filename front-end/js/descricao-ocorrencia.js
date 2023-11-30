@@ -5,6 +5,23 @@ function formatarData(data) {
   return dataObj.toLocaleDateString("pt-BR", options);
 }
 
+function formatarDataHora(dataHora) {
+  const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'America/Sao_Paulo'};
+  return new Intl.DateTimeFormat('pt-BR', options).format(new Date(dataHora));
+}
+
+function tracarRota() {
+  // Obter os valores dos campos de endereço
+  var enderecoOcorrencia = encodeURIComponent(document.getElementById("enderecoOcorrencia").textContent);
+  var enderecoHospital = encodeURIComponent(document.getElementById("enderecoHospital").textContent);
+
+  // Construir a URL da API de Direções do Google Maps
+  var url = 'https://www.google.com/maps/dir/?api=1&origin=' + enderecoOcorrencia + '&destination=' + enderecoHospital;
+
+  // Redirecionar para o Google Maps
+  window.location.href = url;
+}
+
 // Função para buscar os dados da API e atualizar o HTML
 async function carregarDados() {
   try {
@@ -12,22 +29,17 @@ async function carregarDados() {
       "http://localhost:8080/health-tech/ocorrencia/listar-ocorrencias?page=0&size=999"
     );
     const data = await response.json();
-    // Acesse o último item em "content"
+
     const ocorrencia = data.content[data.content.length - 1];
 
     const { paciente, hospital, ambulancia, protocolo, dataHora, descricao, endereco } =
       ocorrencia;
 
-    // Crie o HTML com os dados
     const html = `
             <h1>Detalhes Ocorrência</h1>
             <div class="info-ocorrencia">
                 <h2>Protocolo</h2>
                 <p>${protocolo}</p>
-            </div>
-            <div class="info-ocorrencia">
-                <h2>Endereço da Ocorrência</h2>
-                <p>${endereco}</p>
             </div>
             <div class="info-ocorrencia">
                 <h2>Nome do Paciente</h2>
@@ -37,30 +49,35 @@ async function carregarDados() {
                 <h2>Data Nascimento</h2>
                 <p>${formatarData(paciente.dataNascimento)}</p>
             </div>
-           
+            <div class="info-ocorrencia">
+                <h2>Data e Hora</h2>
+                <p>${formatarDataHora(dataHora)}</p>
+            </div>
+            <div class="info-ocorrencia">
+                <h2>Endereço</h2>
+                <p id="enderecoOcorrencia">${endereco}</p>
+            </div>
             <div class="info-ocorrencia">
                 <h2>Ambulância vinculada</h2>
                 <p>${ambulancia.placaAmbulancia} Tipo: ${ambulancia.tipoAmbulancia}</p>
             </div>
 
-            <div class="info-ocorrencia">
+            <div class="info-ocorrencia" >
                 <h2>Hospital Encaminhado</h2>
-                <p>${hospital.nomeHospital} - ${hospital.municipio}</p>
+                <p id="enderecoHospital">${hospital.nomeHospital} - ${hospital.endereco} - ${hospital.municipio}</p>
             </div>
             <div class="info-ocorrencia">
-                <h2>Descrição da Ocorrência</h2>
+                <h2>Descrição</h2>
                 <p>${descricao}</p>
             </div>
 
-            <button>Home</button>
+            <button onclick="tracarRota()" target="_blank">Traçar Rota</button>
         `;
 
-    // Atualize o conteúdo dentro do elemento com id "occurrence-details"
     document.getElementById("occurrence-details").innerHTML = html;
   } catch (error) {
     console.error("Erro ao carregar dados:", error);
   }
 }
 
-// Chame a função para carregar os dados ao carregar a página
 window.onload = carregarDados;

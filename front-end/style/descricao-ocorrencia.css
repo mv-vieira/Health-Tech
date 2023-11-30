@@ -47,6 +47,7 @@ a {
   text-decoration: none;
 }
 
+
 #logo-container{
   display: flex;
   justify-content: center;
@@ -145,6 +146,25 @@ a {
     margin-top: 1rem;
     margin-bottom: 2rem;
     color: #ffff;
+}
+
+.container-info button{
+    background-color: #042d58;
+    font-size: 1.3rem;
+    color: #fff;
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    text-decoration: none;
+}
+
+.container-info button:hover {
+  background-color: #0056b3;
 }
 
 .info-ocorrencia {
