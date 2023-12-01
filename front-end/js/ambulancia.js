@@ -10,6 +10,7 @@ function procurarPlaca() {
     let placa = document.getElementById("placaInput").value;
     const tableBody = document.getElementById('table-body');
     const tableTitle = document.getElementById('table-title');
+    const input = document.getElementById('placaInput');
     tableBody.innerHTML = '';
     const ApiUrl = `http://localhost:8080/health-tech/ambulancias/buscarplaca?placa=${placa}`;
 
@@ -20,8 +21,10 @@ function procurarPlaca() {
         }
         const contentType = response.headers.get('content-type');
         if (contentType && contentType.includes('application/json')) {
+            input.style.border = '0px'
             return response.json();
         } else {
+            input.style.border = '2px solid red';
             throw new TypeError('A resposta não é JSON válido');
         }
     })

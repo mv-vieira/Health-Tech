@@ -1,6 +1,10 @@
 @import url('/style/style.css');
 
 
+body {
+  height: 100%;
+}
+
 main{
   display: flex;
   align-items: center;

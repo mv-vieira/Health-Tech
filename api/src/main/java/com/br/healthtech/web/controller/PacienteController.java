@@ -63,32 +63,6 @@ public class PacienteController {
         return ResponseEntity.status(HttpStatus.OK).body(pacienteService.findAllPacientesPage(pageable));
     }
 
-//    @GetMapping("/paciente")
-//    public ResponseEntity<List<PacienteAmbulanciaDTO>> getAllPacientes() {
-//        List<Paciente> pacientes = pacienteService.findAll();
-//
-//        if (!pacientes.isEmpty()) {
-//            List<PacienteAmbulanciaDTO> pacienteDTOs = pacientes.stream()
-//                    .map(PacienteAmbulanciaDTO::new)
-//                    .collect(Collectors.toList());
-//
-//            return ResponseEntity.ok(pacienteDTOs);
-//        } else {
-//            return ResponseEntity.noContent().build();
-//        }
-//    }
-
-//    // Listar paciente pelo id
-//    @GetMapping("/paciente/{id}")
-//    public ResponseEntity<Object> getByIdPaciente(@PathVariable(value = "id") Integer id) throws Exception {
-//
-//        Optional<Paciente> pacienteModelOptional = pacienteService.findById(id);
-//
-//        return pacienteModelOptional
-//                .<ResponseEntity<Object>>map(paciente -> ResponseEntity.status(HttpStatus.OK).body(paciente))
-//                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado."));
-//    }
-
     // Listar paciente pelo CPF
     @GetMapping("/paciente/")
     public ResponseEntity<Object> findByCpf(@RequestParam String cpf) throws Exception {

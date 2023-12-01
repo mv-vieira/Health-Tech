@@ -33,9 +33,6 @@ public class Ambulancia {
     @Column(name = "placa_ambulancia",unique = true)
     private String placaAmbulancia;
 
-//    @OneToMany(mappedBy = "ambulancia")
-//    private List<Paciente> pacientes;
-
     @OneToMany(mappedBy = "ambulancia", cascade = CascadeType.ALL)
     @JsonManagedReference
     @JsonIgnoreProperties("ambulancia")
