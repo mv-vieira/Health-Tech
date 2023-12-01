@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       const ambulanciaSelect = document.getElementById("ambulancia");
       ambulanciaSelect.innerHTML = "";
 

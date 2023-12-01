@@ -26,7 +26,6 @@ function procurarPlaca() {
         }
     })
     .then(data => {
-        console.log(data);
         tableTitle.innerHTML = ''
         tableTitle.innerHTML = `Ocorrências da Ambulância - Placa ${data.placaAmbulancia}`;
 
@@ -57,8 +56,6 @@ function procurarPlaca() {
                 uniqueRows.add(rowKey);
             }
         });
-
-        console.log('Finalizando procurarPlaca...');
     })
     .catch(error => console.error('Erro na requisição:', error));
 }
