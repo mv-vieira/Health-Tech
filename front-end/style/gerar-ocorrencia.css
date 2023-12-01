@@ -25,6 +25,7 @@
     color: rgb(146, 141, 141);
 }
 #form-container h1{
+    color: #ffff;
     margin-bottom: 1rem;
 }
 
@@ -87,6 +88,10 @@ form button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+body {
+    height: 100%;
 }
 
 main{

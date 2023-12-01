@@ -12,27 +12,25 @@
 }
 
 ::-webkit-scrollbar {
-  width: 1.2rem; /* Largura da barra de rolagem */
+  width: 1.2rem; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #042d58; /* Cor da parte "agarrável" da barra de rolagem */
-  border-radius: 0.7rem; /* Cantos arredondados */
+  background-color: #042d58; 
+  border-radius: 0.7rem; 
 }
 ::-webkit-scrollbar-track {
-  background-color: #d3d3d3; /* Cor da trilha da barra de rolagem */
+  background-color: #d3d3d3; 
 }
 
 html {
   font-size: 62.5%;
-  /* overflow-x: hidden; */
   scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 }
 
 body {
   height: 100vh;
-  /* overflow-y: hidden; */
   background-image: linear-gradient(to bottom, black, rgb(19, 173, 211));
 }
 
@@ -57,10 +55,14 @@ a {
   align-items: center;
 }
 
+#logo-container a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #logo-container h2 {
   margin-left: 1rem;
   color: #ffff;
-  cursor: default;
 }
 
 #logo {
@@ -74,6 +76,7 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  animation: rotacao 20s infinite linear;
 }
 
 #opcoes-nav {

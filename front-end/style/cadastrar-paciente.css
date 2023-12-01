@@ -25,12 +25,17 @@
     color: rgb(146, 141, 141);
 }
 #form-container h1{
+    color: #ffff;
     margin-bottom: 1rem;
 }
 
 .input-field{
     width: 100%;
     padding: 0.5rem;
+}
+
+body{
+    height: 100%;
 }
 
 form{
@@ -42,8 +47,8 @@ form{
     width: 400px;
     max-width: 100%;
     display: flex;
-    flex-direction: column; /* Organiza os campos verticalmente */
-    align-items: center; /* Centraliza os campos horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
 }
 
 label {

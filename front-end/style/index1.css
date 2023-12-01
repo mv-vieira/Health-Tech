@@ -1,3 +1,5 @@
+@import url('/style/index.css');
+
 main {
   display: flex;
   margin: 30px 50px;
@@ -5,25 +7,25 @@ main {
   height: 80%;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  filter: blur(8px);
-}
-
-#logo {
-  animation: rotacao 20s infinite linear;
+  background-position: right;
 }
 
 #textocentro {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  transform: translate(-90%, -40%);
+  text-align: justify;
+  line-height: 1rem;
   z-index: 1;
-  color: rgb(196, 184, 184);
+  color: #ffff;
   text-shadow: 2px 2px black;
-  justify-content: leftz;
+  justify-content: flex-start;
   display: flex;
   align-items: left;
-  
+}
+
+#textocentro h1{
+  line-height: 3rem;
+  font-size: 2rem;
 }
