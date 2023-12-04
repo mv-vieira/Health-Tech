@@ -47,10 +47,6 @@ public class PacienteService {
     }
 
     // Encontrar todos os Pacientes
-    public List<Paciente> findAll() {
-        return pacienteRepository.findAll();
-    }
-
     public Page<PacienteAmbulanciaDTO> findAllPacientesPage(Pageable pageable){
         Page<Paciente> pacientesPage = pacienteRepository.findAll(pageable);
 

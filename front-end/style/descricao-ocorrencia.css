@@ -1,9 +1,5 @@
-@import url('/style/style.css');
+@import url('style.css');
 
-
-body {
-  height: 100%;
-}
 
 main{
   display: flex;
@@ -13,10 +9,7 @@ main{
 
 .container-info {
     position: relative;
-    background-image: url('/images/logo.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color: #fff;
     object-fit: fill;
     border-left: 1px solid #ffff;
     border-top: 1px solid #ffff;
@@ -88,7 +81,7 @@ main{
 
 .info-ocorrencia h2 {
     /* color: #84b6f4; */
-    color: #e61919;
+    color: #fff;
     font-weight: 500;
     font-size: 1.8rem;
     margin-bottom: 5px;

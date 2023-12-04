@@ -2,7 +2,6 @@
 //Recebendo dados das ambulâncias e colocando no select do form
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Requisição usando fetch
     fetch("http://localhost:8080/health-tech/ambulancias?page=0&size=15")
       .then((response) => {
         if (!response.ok) {
@@ -32,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Recebendo dados dos hospitais e colocando no select do form
 document.addEventListener("DOMContentLoaded", function () {
-    // Requisição usando fetch
     fetch("http://localhost:8080/health-tech/hospital/listar-hospitais?page=0&size=10")
       .then((response) => {
         if (!response.ok) {
@@ -64,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //Recebendo dados dos paciente e ambulancia e colocando no select do form
 document.addEventListener("DOMContentLoaded", function () {
-    // Requisição usando fetch
     fetch("http://localhost:8080/health-tech/paciente?page=0&size=999")
       .then((response) => {
         if (!response.ok) {
@@ -78,10 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const pacienteSelect = document.getElementById("paciente");
         pacienteSelect.innerHTML = "";
         ambulanciaSelect.innerHTML = "";
-  
-        // const defaultOption = document.createElement("option");
-        // defaultOption.text = "Selecione o paciente";
-        // pacienteSelect.add(defaultOption);
 
         const pacientes = data.content;
   
@@ -101,13 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
             
-        // data.content.forEach((paciente) => {
-        //   const option = document.createElement("option");
-        //   option.value = paciente.id;
-        //   option.text =
-        //   paciente.nome + " - " + paciente.dataNascimento;
-        //   pacienteSelect.add(option);
-        // });
       })
       .catch((error) => console.error("Erro:", error));
   });
@@ -154,9 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
           const result = JSON.parse(responseBody);
           console.log("Sucesso:", result);
-          // Faça o que for necessário com o JSON retornado, se aplicável
         } catch (error) {
           console.log("Sucesso:", responseBody);
+
           // Limpar os campos, pois a resposta não é um JSON
           enderecoElement.value = "";
           descricaoElement.value = "";

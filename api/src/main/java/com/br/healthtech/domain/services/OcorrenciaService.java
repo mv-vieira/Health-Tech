@@ -63,7 +63,7 @@ public class OcorrenciaService {
 
     // Criar nova ocorrência
     public void saveOcorrencia(Ocorrencia ocorrencia, Integer idAmbulancia, Integer idPaciente, Integer idHospital) throws Exception {
-//        try{
+        try{
             Optional<Ambulancia> ambulanciaOptional = ambulanciaService.findById(idAmbulancia);
             Optional<Paciente> pacienteOptional = pacienteService.findById(idPaciente);
             Optional<Hospital> hospitalOptional = hospitalService.findById(idHospital);
@@ -86,10 +86,10 @@ public class OcorrenciaService {
                 ocorrencia.setDataHora(dataHoraAtualBrasilia);
             }
             ocorrenciaRepository.save(ocorrencia);
-//
-//        } catch(Exception e){
-//            throw new Exception("Não foi possível registrar ocorrência: " + e.getMessage());
-//        }
+
+        } catch(Exception e){
+            throw new Exception("Não foi possível registrar ocorrência: " + e.getMessage());
+        }
 
     }
 }
